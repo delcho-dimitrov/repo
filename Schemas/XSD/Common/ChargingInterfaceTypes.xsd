@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns:m="http://www.mobiltel.bg/chargerequest"
+	 xmlns:ci="http://www.tibco.com/schemas/ChargingService/Schemas/XSD/Common/Schema.xsd"
+	 targetNamespace="http://www.tibco.com/schemas/ChargingService/Schemas/XSD/Common/Schema.xsd"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+
+	<!-- imports -->
+	<xs:import namespace="http://www.mobiltel.bg/chargerequest" schemaLocation="../Charge/ChargeRequest.xsd"/>
+
+	<!-- common elements -->
+	<xs:element name="RestrictionServiceID" type="xs:string"/>
+
+	<!-- CheckPostpaidLimits -->
+	<xs:element name="CheckPostpaidLimitsRequest" type="ci:CheckPostpaidLimitsRequestType"/>
+	<xs:complexType name="CheckPostpaidLimitsRequestType">
+		<xs:sequence>
+			<xs:element ref="m:ChargeRequest"/>
+			<xs:element name="Restrictions" type="ci:RestrictionsType"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- CDRGenerator call-->
+	<xs:element name="CDRRequest" type="ci:CDRRequestType"/>
+	<xs:complexType name="CDRRequestType">
+		<xs:sequence>
+			<xs:element ref="m:ChargeRequest"/>
+			<xs:element name="BasicServiceID" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="CheckSubscriberType">
+		<xs:complexType/>
+	</xs:element>
+	<xs:element name="CheckSubscriberTypeType">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="MSISDN" type="xs:string"/>
+				<xs:element name="UseCSR" type="xs:boolean"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Restrictions" type="ci:RestrictionsType"/>
+	<xs:complexType name="RestrictionsType">
+		<xs:sequence>
+			<xs:element ref="ci:RestrictionServiceID"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

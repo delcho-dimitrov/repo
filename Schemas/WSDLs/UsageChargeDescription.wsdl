@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns="http://xmlns.example.com/unique/default/namespace/1147939141609" xmlns:ns2="http://xmlns.example.com/unique/default/namespace/1147955875312" xmlns:tns="http://www.mobiltel.bg/charging" xmlns:ns3="http://www.mobiltel.bg/chargerequest" xmlns:ns4="http://www.mobiltel.bg/chargeresponse" targetNamespace="http://www.mobiltel.bg/charging">
+    <import namespace="http://www.mobiltel.bg/chargeresponse" location="../XSD/Charge/ChargeResponse.xsd"/>
+    <import namespace="http://www.mobiltel.bg/chargerequest" location="../XSD/Charge/ChargeRequest.xsd"/>
+    <message name="UsageChargeRequest">
+        <part name="Request" element="ns3:ChargeRequest"/>
+    </message>
+    <message name="UsageChargeResponse">
+        <part name="Response" element="ns4:ChargeResponse"/>
+    </message>
+    <message name="ErrorMessage">
+        <part name="RuntimeError" element="ns4:RuntimeError"/>
+    </message>
+    <portType name="PortType">
+        <operation name="UsageCharge">
+            <input message="tns:UsageChargeRequest"/>
+            <output message="tns:UsageChargeResponse"/>
+            <fault name="fault1" message="tns:ErrorMessage"/>
+        </operation>
+    </portType>
+</definitions>

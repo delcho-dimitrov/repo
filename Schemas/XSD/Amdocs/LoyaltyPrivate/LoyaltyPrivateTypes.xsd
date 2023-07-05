@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns:LoyaltyPrivateTypes="http://mtel.bg/LoyaltyPrivate/LoyaltyPrivateTypes"
+	 targetNamespace="http://mtel.bg/LoyaltyPrivate/LoyaltyPrivateTypes"
+	 elementFormDefault="unqualified"
+	 attributeFormDefault="unqualified">
+
+	<!-- *************** -->
+	<!-- Simple Types -->
+	<!-- *************** -->
+	<!-- A -->
+	<xs:simpleType name="AccountID">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="12"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!-- B -->
+	<!-- C -->
+	<xs:simpleType name="CardIssueDate">
+		<xs:restriction base="xs:dateTime"/>
+	</xs:simpleType>
+	<xs:simpleType name="CardNumber">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="256"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CardStatus">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="256"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!-- D -->
+	<xs:simpleType name="Description">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="256"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="DiscountID">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="20"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="DiscountName">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="256"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="DiscountServiceType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="256"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!-- E -->
+	<!-- F -->
+	<!-- G -->
+	<!-- H -->
+	<!-- I -->
+	<!-- J -->
+	<!-- K -->
+	<!-- L -->
+	<xs:simpleType name="LocationID">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="LoyaltyPointsAmount">
+		<xs:restriction base="xs:int"/>
+	</xs:simpleType>
+
+	<!-- M -->
+	<xs:simpleType name="MemberID">
+		<xs:restriction base="xs:int"/>
+	</xs:simpleType>
+	<xs:simpleType name="MembershipStatus">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="3"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="MSISDN">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[0][0-9]+"/>
+			<xs:maxLength value="12"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!-- N -->
+	<!-- O -->
+	<xs:simpleType name="OrderExecutionResult">
+		<xs:restriction base="xs:int"/>
+	</xs:simpleType>
+	<xs:simpleType name="OrderGroupID">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="OrderID">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="OrderValidationResult">
+		<xs:restriction base="xs:int"/>
+	</xs:simpleType>
+
+	<!-- P -->
+	<xs:simpleType name="ProgramReason">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="20"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!-- Q -->
+	<!-- R -->
+	<!-- S -->
+	<xs:simpleType name="SubscriberID">
+		<xs:restriction base="xs:int"/>
+	</xs:simpleType>
+	<xs:simpleType name="Segment">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="20"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SubscriberStatus">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="20"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!-- T -->
+	<!-- U -->
+	<!-- V -->
+	<!-- W -->
+	<!-- X -->
+	<!-- Y -->
+	<!-- Z -->
+	<!-- ***************** -->
+	<!-- Complex Types -->
+	<!-- ***************** -->
+	<!-- A -->
+	<xs:complexType name="AccountType">
+		<xs:sequence>
+			<xs:element name="AccountID" type="LoyaltyPrivateTypes:AccountID"/>
+			<xs:element name="Balance" type="LoyaltyPrivateTypes:LoyaltyPointsAmount"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- B -->
+	<!-- C -->
+	<xs:complexType name="CardType">
+		<xs:sequence>
+			<xs:element name="CardNumber" type="LoyaltyPrivateTypes:CardNumber"/>
+			<xs:element name="CardIssueDate" type="LoyaltyPrivateTypes:CardIssueDate" minOccurs="0"/>
+			<xs:element name="CardStatus" type="LoyaltyPrivateTypes:CardStatus" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- D -->
+	<xs:complexType name="DiscountType">
+		<xs:sequence>
+			<xs:element name="DiscountID" type="LoyaltyPrivateTypes:DiscountID"/>
+			<xs:element name="DiscountName" type="LoyaltyPrivateTypes:DiscountName"/>
+			<xs:element name="DiscountServiceType" type="LoyaltyPrivateTypes:DiscountServiceType"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- E -->
+	<!-- F -->
+	<!-- G -->
+	<!-- H -->
+	<!-- I -->
+	<!-- J -->
+	<!-- K -->
+	<!-- L -->
+	<!-- M -->
+	<!-- N -->
+	<!-- O -->
+	<xs:complexType name="OrderType">
+		<xs:sequence>
+			<xs:element name="OrderID" type="LoyaltyPrivateTypes:OrderID"/>
+			<xs:element name="OrderGroupID" type="LoyaltyPrivateTypes:OrderGroupID"/>
+			<xs:element name="MSISDN" type="LoyaltyPrivateTypes:MSISDN"/>
+			<xs:element name="AccountID" type="LoyaltyPrivateTypes:AccountID"/>
+			<xs:element name="LocationID" type="LoyaltyPrivateTypes:LocationID"/>
+			<xs:element name="OrderItem" type="LoyaltyPrivateTypes:OrderItemType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="OrderItemType">
+		<xs:sequence>
+			<xs:element name="LoyaltyPointsAmount" type="LoyaltyPrivateTypes:LoyaltyPointsAmount"/>
+			<xs:element name="LoyaltyPointsCreditAmount" type="LoyaltyPrivateTypes:LoyaltyPointsAmount"/>
+			<xs:element name="Discount" type="LoyaltyPrivateTypes:DiscountType"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- P -->
+	<!-- Q -->
+	<!-- R -->
+	<!-- S -->
+	<xs:complexType name="SubscriberType">
+		<xs:sequence>
+			<xs:element name="MSISDN" type="LoyaltyPrivateTypes:MSISDN"/>
+			<xs:element name="MemberID" type="LoyaltyPrivateTypes:AccountID"/>
+			<xs:element name="AccountID" type="LoyaltyPrivateTypes:AccountID"/>
+			<xs:element name="Balance" type="LoyaltyPrivateTypes:LoyaltyPointsAmount"/>
+			<xs:element name="MembershipStatus" type="LoyaltyPrivateTypes:MembershipStatus"/>
+			<xs:element name="MembershipStatusDescription" type="LoyaltyPrivateTypes:Description"/>
+			<xs:element name="Card" type="LoyaltyPrivateTypes:CardType" minOccurs="0"/>
+			<xs:element name="SubscriberID" type="LoyaltyPrivateTypes:SubscriberID"/>
+			<xs:element name="Segment" type="LoyaltyPrivateTypes:Segment"/>
+			<xs:element name="ProgramReason" type="LoyaltyPrivateTypes:ProgramReason"/>
+			<xs:element name="SubscriberStatus" type="LoyaltyPrivateTypes:SubscriberStatus"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

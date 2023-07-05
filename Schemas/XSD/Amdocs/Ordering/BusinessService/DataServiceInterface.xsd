@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2008 rel. 2 (http://www.altova.com) by mazuki (darksiderg) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://mtel.bg/Ordering/BusinessServices/DataServiceInterface" xmlns:DataServiceTypes="http://mtel.bg/Ordering/BusinessServices/DataServiceTypes" targetNamespace="http://mtel.bg/Ordering/BusinessServices/DataServiceInterface" elementFormDefault="unqualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://mtel.bg/Ordering/BusinessServices/DataServiceTypes" schemaLocation="DataServiceTypes.xsd"/>
+	<xs:element name="GetFNFServiceRequest" type="DataServiceTypes:GetFNFServiceRequestType">
+		<xs:annotation>
+			<xs:documentation/>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="GetFNFServiceResponse" type="DataServiceTypes:GetFNFServiceResponseType">
+		<xs:annotation>
+			<xs:documentation/>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="GetServiceStatusRequest" type="DataServiceTypes:GetServiceStatusRequestType">
+		<xs:annotation>
+			<xs:documentation/>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="GetServiceStatusResponse" type="DataServiceTypes:GetServiceStatusResponseType">
+		<xs:annotation>
+			<xs:documentation/>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="GetLoyaltyPrivateInfoRequest" type="DataServiceTypes:GetLoyaltyPrivateInfoRequestType">
+		<xs:annotation>
+			<xs:documentation/>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="GetLoyaltyPrivateInfoResponse" type="DataServiceTypes:GetLoyaltyPrivateInfoResponseType">
+		<xs:annotation>
+			<xs:documentation/>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="ValidateDiscountRequest" type="DataServiceTypes:ValidateDiscountRequestType">
+		<xs:annotation>
+			<xs:documentation/>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="ValidateDiscountResponse" type="DataServiceTypes:ValidateDiscountResponseType">
+		<xs:annotation>
+			<xs:documentation/>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,1169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Created by TIBCO WSDL-->
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.mtel.bg/Billing/PaymentService" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap1="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:jms="http://www.tibco.com/namespaces/ws/2004/soap/binding/JMS" xmlns:jndi="http://www.tibco.com/namespaces/ws/2004/soap/apis/jndi" xmlns:ns0="http://www.mtel.bg/ADX/Billing/BillingTypes" name="Untitled" targetNamespace="http://www.mtel.bg/Billing/PaymentService">
+    <wsdl:types>
+        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://www.mtel.bg/ADX/Billing/PaymentService" targetNamespace="http://www.mtel.bg/ADX/Billing/BillingTypes" elementFormDefault="unqualified" attributeFormDefault="unqualified">
+            <xs:complexType name="ResponseFaultType">
+                <xs:annotation>
+                    <xs:documentation>Used as a response on an exception.</xs:documentation>
+                </xs:annotation>
+                <xs:sequence>
+                    <xs:element name="RESPONSE">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="RETCODE" type="ns0:RetcodeType"/>
+                            </xs:sequence>
+                            <xs:attribute name="VERSION" type="ns0:Version"/>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="backOutInvoiceRequestType">
+                <xs:annotation>
+                    <xs:documentation>Request for invoice back out</xs:documentation>
+                </xs:annotation>
+                <xs:sequence>
+                    <xs:element name="REQUEST">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="RELEASE" type="ns0:ReleaseInvoiceType"/>
+                            </xs:sequence>
+                            <xs:attribute name="VERSION" type="ns0:Version"/>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="getDepositsRequestType">
+                <xs:annotation>
+                    <xs:documentation>Request Deposits</xs:documentation>
+                </xs:annotation>
+                <xs:sequence>
+                    <xs:element name="REQUEST">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="IDENTITY" type="ns0:IdentityDepositsType"/>
+                            </xs:sequence>
+                            <xs:attribute name="VERSION" type="ns0:Version"/>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="getDepositsResponseType">
+                <xs:annotation>
+                    <xs:documentation>Response for Deposits request</xs:documentation>
+                </xs:annotation>
+                <xs:sequence>
+                    <xs:element name="RESPONSE">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="RETCODE" type="ns0:RetcodeType"/>
+                                <xs:element name="CUSTOMER" type="ns0:CustomerIDType"/>
+                                <xs:element name="DEPOSITS" type="ns0:DepositsType"/>
+                            </xs:sequence>
+                            <xs:attribute name="VERSION" type="ns0:Version"/>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="getInvoicesRequestType">
+                <xs:annotation>
+                    <xs:documentation>Request Invoices</xs:documentation>
+                </xs:annotation>
+                <xs:sequence>
+                    <xs:element name="REQUEST">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="IDENTITY" type="ns0:IdentityInvoicesType"/>
+                            </xs:sequence>
+                            <xs:attribute name="VERSION" type="ns0:Version"/>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="getInvoicesResponseType">
+                <xs:annotation>
+                    <xs:documentation>Response for Invoices request</xs:documentation>
+                </xs:annotation>
+                <xs:sequence>
+                    <xs:element name="RESPONSE">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="RETCODE" type="ns0:RetcodeType"/>
+                                <xs:element name="CUSTOMER" type="ns0:CustomerIDType"/>
+                                <xs:element name="INVOICES" type="ns0:InvoicesType"/>
+                            </xs:sequence>
+                            <xs:attribute name="VERSION" type="ns0:Version"/>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="getSalesInvoiceDetailsRequestType">
+                <xs:annotation>
+                    <xs:documentation>Request Sales Invoice Details</xs:documentation>
+                </xs:annotation>
+                <xs:sequence>
+                    <xs:element name="REQUEST">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="IDENTITY" type="ns0:IdentityInvoiceDetailsType"/>
+                            </xs:sequence>
+                            <xs:attribute name="VERSION" type="ns0:Version"/>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="getSalesInvoiceDetailsResponseType">
+                <xs:sequence>
+                    <xs:element name="RESPONSE">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="RETCODE" type="ns0:RetcodeType"/>
+                                <xs:element name="DETAILS" type="ns0:InvoiceDetailsType"/>
+                            </xs:sequence>
+                            <xs:attribute name="VERSION" type="ns0:Version"/>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="getUnbilledBalanceRequestType">
+                <xs:annotation>
+                    <xs:documentation>Request Unbilled Balance</xs:documentation>
+                </xs:annotation>
+                <xs:sequence>
+                    <xs:element name="REQUEST">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="IDENTITY" type="ns0:IdentityUnbilledBalanceType"/>
+                            </xs:sequence>
+                            <xs:attribute name="VERSION" type="ns0:Version"/>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="getUnbilledBalanceResponseType">
+                <xs:sequence>
+                    <xs:element name="RESPONSE">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="RETCODE" type="ns0:RetcodeType"/>
+                                <xs:element name="BALANCE" type="ns0:BalanceType"/>
+                            </xs:sequence>
+                            <xs:attribute name="VERSION" type="ns0:Version"/>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="payDepositRequestType">
+                <xs:annotation>
+                    <xs:documentation>Request for paying deposit</xs:documentation>
+                </xs:annotation>
+                <xs:sequence>
+                    <xs:element name="REQUEST">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="PAYMENT" type="ns0:PaymentDepositType"/>
+                            </xs:sequence>
+                            <xs:attribute name="VERSION" type="ns0:Version"/>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="payInvoiceRequesType">
+                <xs:annotation>
+                    <xs:documentation>Request for paying invoice</xs:documentation>
+                </xs:annotation>
+                <xs:sequence>
+                    <xs:element name="REQUEST">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="PAYMENT" type="ns0:PaymentInvoiceType"/>
+                            </xs:sequence>
+                            <xs:attribute name="VERSION" type="ns0:Version"/>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="withdrawDepositRequestType">
+                <xs:annotation>
+                    <xs:documentation>Request for deposit withdraw</xs:documentation>
+                </xs:annotation>
+                <xs:sequence>
+                    <xs:element name="REQUEST">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="RELEASE" type="ns0:ReleaseDepositType"/>
+                            </xs:sequence>
+                            <xs:attribute name="VERSION" type="ns0:Version"/>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="ResponseFault" type="ns0:ResponseFaultType"/>
+            <xs:element name="backOutInvoiceRequest" type="ns0:backOutInvoiceRequestType"/>
+            <xs:element name="backOutInvoiceResponse" type="ns0:ResponseActionType"/>
+            <xs:element name="getDepositsRequest" type="ns0:getDepositsRequestType"/>
+            <xs:element name="getDepositsResponse" type="ns0:getDepositsResponseType"/>
+            <xs:element name="getInvoicesRequest" type="ns0:getInvoicesRequestType"/>
+            <xs:element name="getInvoicesResponse" type="ns0:getInvoicesResponseType"/>
+            <xs:element name="getSalesInvoiceDetailsRequest" type="ns0:getSalesInvoiceDetailsRequestType"/>
+            <xs:element name="getSalesInvoiceDetailsResponse" type="ns0:getSalesInvoiceDetailsResponseType"/>
+            <xs:element name="getUnbilledBalanceRequest" type="ns0:getUnbilledBalanceRequestType"/>
+            <xs:element name="getUnbilledBalanceResponse" type="ns0:getUnbilledBalanceResponseType"/>
+            <xs:element name="payDepositRequest" type="ns0:payDepositRequestType"/>
+            <xs:element name="payDepositResponse" type="ns0:ResponseActionType"/>
+            <xs:element name="payInvoiceReques" type="ns0:payInvoiceRequesType"/>
+            <xs:element name="payInvoiceResponse" type="ns0:ResponseActionType"/>
+            <xs:element name="withdrawDepositRequest" type="ns0:withdrawDepositRequestType"/>
+            <xs:element name="withdrawDepositResponse" type="ns0:ResponseActionType"/>
+            <xs:simpleType name="Account">
+                <xs:annotation>
+                    <xs:documentation>Account type</xs:documentation>
+                </xs:annotation>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="MOBILTEL"/>
+                    <xs:enumeration value="CUSTOMER"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:complexType name="AccountCustomerType">
+                <xs:attribute name="BIC" use="required" type="ns0:BIC"/>
+                <xs:attribute name="IBAN" use="required" type="ns0:IBAN"/>
+                <xs:attribute name="NAME" use="required" type="ns0:Name"/>
+                <xs:attribute name="REFERENCE" use="required" type="ns0:Reference"/>
+            </xs:complexType>
+            <xs:complexType name="AccountMobiltelType">
+                <xs:attribute name="BIC" use="required" type="ns0:BIC"/>
+                <xs:attribute name="IBAN" use="required" type="ns0:IBAN"/>
+                <xs:attribute name="REFERENCE" use="required" type="ns0:Reference"/>
+            </xs:complexType>
+            <xs:simpleType name="Amount">
+                <xs:annotation>
+                    <xs:documentation>Currency Amount in format "-?\d*.\d{2}"  (-)12345.00</xs:documentation>
+                </xs:annotation>
+                <xs:restriction base="xs:string">
+                    <xs:pattern value="-?\d*.\d{2}"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="BANID">
+                <xs:restriction base="xs:int">
+                    <xs:totalDigits value="9"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:complexType name="BANInvoicesType">
+                <xs:annotation>
+                    <xs:documentation>BAN structure used for invoices</xs:documentation>
+                </xs:annotation>
+                <xs:sequence>
+                    <xs:element name="BEN" type="ns0:BENType" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+                <xs:attribute name="BILLCYCLE" use="required" type="ns0:BillingCycle"/>
+                <xs:attribute name="CONTRACT" use="required" type="ns0:ContractNumber"/>
+                <xs:attribute name="CURRENCY" use="required" type="ns0:Currency"/>
+                <xs:attribute name="ID" use="required" type="ns0:BANID"/>
+            </xs:complexType>
+            <xs:complexType name="BANSubscriptionsType">
+                <xs:annotation>
+                    <xs:documentation>BAN structure used for subscriptions</xs:documentation>
+                </xs:annotation>
+                <xs:sequence>
+                    <xs:element name="SUBSCRIPTION" minOccurs="0" maxOccurs="unbounded">
+                        <xs:complexType>
+                            <xs:attribute name="CREDITLIMIT" use="required" type="ns0:Amount"/>
+                            <xs:attribute name="DEPOSIT" use="required" type="ns0:Amount"/>
+                            <xs:attribute name="ID" use="required" type="ns0:SubscriptionID"/>
+                            <xs:attribute name="MSISDN" use="required" type="ns0:MSISDN"/>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+                <xs:attribute name="BCONTROL" use="required" type="ns0:BControl"/>
+                <xs:attribute name="BILLCYCLE" use="required" type="ns0:BillingCycle"/>
+                <xs:attribute name="CCONTROL" use="required" type="ns0:CControl"/>
+                <xs:attribute name="COLLECTION" use="required" type="ns0:Collection"/>
+                <xs:attribute name="CONTRACT" use="required" type="ns0:ContractNumber"/>
+                <xs:attribute name="CURRENCY" use="required" type="ns0:Currency"/>
+                <xs:attribute name="DEPOSIT" use="required" type="ns0:Amount"/>
+                <xs:attribute name="ID" use="required" type="ns0:BANID"/>
+            </xs:complexType>
+            <xs:simpleType name="BControl">
+                <xs:annotation>
+                    <xs:documentation>Subscription Budget Control status</xs:documentation>
+                </xs:annotation>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="0"/>
+                    <xs:enumeration value="1"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="BENID">
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="32"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:complexType name="BENType">
+                <xs:sequence>
+                    <xs:element name="INVOICE" type="ns0:InvoiceInfoType" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+                <xs:attribute name="ID" use="required" type="ns0:BENID"/>
+                <xs:attribute name="PIN" use="required" type="ns0:PIN"/>
+            </xs:complexType>
+            <xs:simpleType name="BIC">
+                <xs:annotation>
+                    <xs:documentation>Bank Identification Code  - 8 letters for MTEL account</xs:documentation>
+                </xs:annotation>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="8"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:complexType name="BalanceType">
+                <xs:annotation>
+                    <xs:documentation>Used for balance response</xs:documentation>
+                </xs:annotation>
+                <xs:sequence>
+                    <xs:element name="SUBSCRIPTION" type="ns0:SubscriptionInfoType"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:simpleType name="BillingCycle">
+                <xs:restriction base="xs:int">
+                    <xs:maxInclusive value="99"/>
+                    <xs:minInclusive value="0"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="CControl">
+                <xs:annotation>
+                    <xs:documentation>Manual Credit Control Status</xs:documentation>
+                </xs:annotation>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="0"/>
+                    <xs:enumeration value="1"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="Collection">
+                <xs:annotation>
+                    <xs:documentation>Customer Collection Status</xs:documentation>
+                </xs:annotation>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="0"/>
+                    <xs:enumeration value="1"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="ContractNumber">
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="20"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="Currency">
+                <xs:restriction base="xs:string">
+                    <xs:minLength value="1"/>
+                    <xs:maxLength value="1"/>
+                    <xs:enumeration value="A"/>
+                    <xs:enumeration value="E"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="Customer">
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="1"/>
+                    <xs:minLength value="1"/>
+                    <xs:enumeration value="M"/>
+                    <xs:enumeration value="N"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:complexType name="CustomerIDType">
+                <xs:attribute name="ID" use="required" type="ns0:PID"/>
+            </xs:complexType>
+            <xs:complexType name="CustomerType">
+                <xs:attribute name="ID" use="required" type="ns0:PID"/>
+                <xs:attribute name="TYPE" use="required" type="ns0:Customer"/>
+            </xs:complexType>
+            <xs:simpleType name="Date">
+                <xs:restriction base="xs:token"/>
+            </xs:simpleType>
+            <xs:simpleType name="DepositID">
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="20"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="DepositIdentityType">
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="BAN"/>
+                    <xs:enumeration value="SUBSCRIPTION"/>
+                    <xs:enumeration value="MSISDN"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="DepositPayID">
+                <xs:annotation>
+                    <xs:documentation>How the payment will be done.</xs:documentation>
+                </xs:annotation>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="CASH"/>
+                    <xs:enumeration value="DEBIT"/>
+                    <xs:enumeration value="CREDIT"/>
+                    <xs:enumeration value="CHECK"/>
+                    <xs:enumeration value="BANK"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:complexType name="DepositPayType">
+                <xs:annotation>
+                    <xs:documentation>Designates a particular deposit to be paid</xs:documentation>
+                </xs:annotation>
+                <xs:sequence>
+                    <xs:element name="PAYTYPE" type="ns0:DepositPayTypeType" maxOccurs="unbounded"/>
+                </xs:sequence>
+                <xs:attribute name="CURRENCY" use="required" type="ns0:Currency"/>
+                <xs:attribute name="ID" use="required" type="ns0:DepositID"/>
+                <xs:attribute name="TOTAL" use="required" type="ns0:Amount"/>
+                <xs:attribute name="TYPE" use="required" type="ns0:DepositIdentityType"/>
+            </xs:complexType>
+            <xs:complexType name="DepositPayTypeType">
+                <xs:sequence>
+                    <xs:element name="ACCOUNTM" type="ns0:AccountMobiltelType" minOccurs="0"/>
+                    <xs:element name="ACCOUNTC" type="ns0:AccountCustomerType" minOccurs="0"/>
+                </xs:sequence>
+                <xs:attribute name="AMOUNT" use="required" type="ns0:Amount"/>
+                <xs:attribute name="ID" use="required" type="ns0:DepositPayID"/>
+                <xs:attribute name="SUBTYPE" use="required" type="ns0:SubType"/>
+            </xs:complexType>
+            <xs:complexType name="DepositType">
+                <xs:sequence>
+                    <xs:element name="REMARKS" type="ns0:Remark" minOccurs="0"/>
+                </xs:sequence>
+                <xs:attribute name="ID" use="required" type="ns0:DepositID"/>
+                <xs:attribute name="TOTAL" use="required" type="ns0:Amount"/>
+                <xs:attribute name="TYPE" use="required" type="ns0:DepositIdentityType"/>
+            </xs:complexType>
+            <xs:complexType name="DepositsType">
+                <xs:sequence>
+                    <xs:element name="BAN" minOccurs="0" maxOccurs="unbounded">
+                        <xs:complexType>
+                            <xs:complexContent>
+                                <xs:extension base="ns0:BANSubscriptionsType"/>
+                            </xs:complexContent>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:simpleType name="Description">
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="28"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="ErrorCode">
+                <xs:annotation>
+                    <xs:documentation>Error code 0 for success</xs:documentation>
+                </xs:annotation>
+                <xs:restriction base="xs:integer">
+                    <xs:totalDigits value="6"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="ErrorDescription">
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="100"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="IBAN">
+                <xs:annotation>
+                    <xs:documentation>International Bank Account Number </xs:documentation>
+                </xs:annotation>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="22"/>
+                    <xs:minLength value="22"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="ID">
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="20"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:complexType name="IdentityDepositsType">
+                <xs:sequence>
+                    <xs:element name="DEPOSITS" type="xs:anyType"/>
+                </xs:sequence>
+                <xs:attribute name="ID" use="required" type="ns0:ID"/>
+                <xs:attribute name="TYPE" use="required" type="ns0:IdentityType"/>
+            </xs:complexType>
+            <xs:complexType name="IdentityInvoiceDetailsType">
+                <xs:sequence>
+                    <xs:element name="DETAILS">
+                        <xs:complexType/>
+                    </xs:element>
+                </xs:sequence>
+                <xs:attribute name="ID" use="required" type="ns0:InvoiceID"/>
+                <xs:attribute name="TYPE" use="required" type="ns0:InvoiceIdentityType"/>
+            </xs:complexType>
+            <xs:complexType name="IdentityInvoicesType">
+                <xs:sequence>
+                    <xs:element name="INVOICES" type="xs:anyType"/>
+                </xs:sequence>
+                <xs:attribute name="ID" use="required" type="ns0:InvoiceID"/>
+                <xs:attribute name="TYPE" use="required" type="ns0:IdentityType"/>
+            </xs:complexType>
+            <xs:simpleType name="IdentityType">
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="12"/>
+                    <xs:enumeration value="PID"/>
+                    <xs:enumeration value="CONTRACT"/>
+                    <xs:enumeration value="BAN"/>
+                    <xs:enumeration value="INVOICE"/>
+                    <xs:enumeration value="SUBSCRIPTION"/>
+                    <xs:enumeration value="MSISDN"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:complexType name="IdentityUnbilledBalanceType">
+                <xs:sequence>
+                    <xs:element name="BALANCE" type="xs:anyType"/>
+                </xs:sequence>
+                <xs:attribute name="ID" use="required" type="ns0:MSISDNOrSubscription"/>
+                <xs:attribute name="TYPE" use="required" type="ns0:UnbilledBalanceIdentityType"/>
+            </xs:complexType>
+            <xs:complexType name="InvoiceBackOutType">
+                <xs:annotation>
+                    <xs:documentation>Designates a particular invoice to be unpayed</xs:documentation>
+                </xs:annotation>
+                <xs:sequence>
+                    <xs:element name="REMARKS" type="ns0:Remark" minOccurs="0"/>
+                </xs:sequence>
+                <xs:attribute name="CURRENCY" use="required" type="ns0:Currency"/>
+                <xs:attribute name="ID" use="required" type="ns0:InvoiceID"/>
+                <xs:attribute name="TOTAL" use="required" type="ns0:Amount"/>
+            </xs:complexType>
+            <xs:complexType name="InvoiceDetailsType">
+                <xs:annotation>
+                    <xs:documentation>Used for invoice details response</xs:documentation>
+                </xs:annotation>
+                <xs:sequence>
+                    <xs:element name="INVOICE" type="ns0:SalesInvoiceInfoType"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:simpleType name="InvoiceID">
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="20"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="InvoiceIdentityType">
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="INVOICE"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:complexType name="InvoiceInfoType">
+                <xs:annotation>
+                    <xs:documentation>Invoice information received from Billing</xs:documentation>
+                </xs:annotation>
+                <xs:sequence>
+                    <xs:element name="TAXCODE" type="ns0:TaxCodeType" maxOccurs="unbounded"/>
+                </xs:sequence>
+                <xs:attribute name="DATE" use="required" type="ns0:Date"/>
+                <xs:attribute name="DDATE" use="required" type="ns0:Date"/>
+                <xs:attribute name="ID" use="required" type="ns0:InvoiceID"/>
+                <xs:attribute name="PAID" use="required" type="ns0:Amount"/>
+                <xs:attribute name="TAX" use="required" type="ns0:Amount"/>
+                <xs:attribute name="TAXABLE" use="required" type="ns0:Amount"/>
+                <xs:attribute name="TOTAL" use="required" type="ns0:Amount"/>
+                <xs:attribute name="TYPE" use="required" type="ns0:InvoiceType"/>
+            </xs:complexType>
+            <xs:complexType name="InvoicePayType">
+                <xs:annotation>
+                    <xs:documentation>Designates a particular invoice to be paid</xs:documentation>
+                </xs:annotation>
+                <xs:sequence>
+                    <xs:element name="PAYTYPE" type="ns0:PayTypeType" maxOccurs="unbounded"/>
+                </xs:sequence>
+                <xs:attribute name="CURRENCY" use="required" type="ns0:Currency"/>
+                <xs:attribute name="ID" use="required" type="ns0:InvoiceID"/>
+                <xs:attribute name="TOTAL" use="required" type="ns0:Amount"/>
+            </xs:complexType>
+            <xs:simpleType name="InvoiceType">
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="8"/>
+                    <xs:enumeration value="BILLING"/>
+                    <xs:enumeration value="SALES"/>
+                    <xs:enumeration value="PROFORMA"/>
+                    <xs:enumeration value="PENALTY"/>
+                    <xs:enumeration value="DEBTNOTE"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:complexType name="InvoicesType">
+                <xs:sequence>
+                    <xs:element name="BAN" type="ns0:BANInvoicesType" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:simpleType name="MSISDN">
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="20"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="MSISDNOrSubscription">
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="20"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="Name">
+                <xs:annotation>
+                    <xs:documentation>The name of the account holder for Customer Account</xs:documentation>
+                </xs:annotation>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="100"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="Office">
+                <xs:annotation>
+                    <xs:documentation>Current office (shop) of the Cashier user</xs:documentation>
+                </xs:annotation>
+                <xs:restriction base="xs:int">
+                    <xs:totalDigits value="5"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="PID">
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="20"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="PIN">
+                <xs:annotation>
+                    <xs:documentation>PIN [0-9][0-9][0-9][0-9] - 0103</xs:documentation>
+                </xs:annotation>
+                <xs:restriction base="xs:string">
+                    <xs:pattern value="[0-9][0-9][0-9][0-9]"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="PayID">
+                <xs:annotation>
+                    <xs:documentation>How the payment will be done.</xs:documentation>
+                </xs:annotation>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="CASH"/>
+                    <xs:enumeration value="DEBIT"/>
+                    <xs:enumeration value="CREDIT"/>
+                    <xs:enumeration value="CHECK"/>
+                    <xs:enumeration value="BANK"/>
+                    <xs:enumeration value="DDEBIT"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:complexType name="PayTypeType">
+                <xs:sequence>
+                    <xs:element name="ACCOUNTM" type="ns0:AccountMobiltelType" minOccurs="0"/>
+                    <xs:element name="ACCOUNTC" type="ns0:AccountCustomerType" minOccurs="0"/>
+                </xs:sequence>
+                <xs:attribute name="AMOUNT" use="required" type="ns0:Amount"/>
+                <xs:attribute name="ID" use="required" type="ns0:PayID"/>
+                <xs:attribute name="SUBTYPE" use="required" type="ns0:SubType"/>
+            </xs:complexType>
+            <xs:complexType name="PaymentDepositType">
+                <xs:annotation>
+                    <xs:documentation>Designates request for payment for deposit</xs:documentation>
+                </xs:annotation>
+                <xs:sequence>
+                    <xs:element name="DEPOSIT" type="ns0:DepositPayType"/>
+                    <xs:element name="REMARKS" type="ns0:Remark" minOccurs="0"/>
+                </xs:sequence>
+                <xs:attribute name="OFFICE" use="required" type="ns0:Office"/>
+                <xs:attribute name="SEQ" use="required" type="ns0:Seq"/>
+                <xs:attribute name="SOURCE" use="required" type="ns0:PaymentSource"/>
+                <xs:attribute name="TDATE" use="required" type="ns0:Date"/>
+                <xs:attribute name="TID" use="required" type="ns0:TID"/>
+                <xs:attribute name="TYPE" use="required" type="ns0:PaymentType"/>
+                <xs:attribute name="USER" use="required" type="ns0:User"/>
+            </xs:complexType>
+            <xs:complexType name="PaymentInvoiceType">
+                <xs:annotation>
+                    <xs:documentation>Designates request for payment for invoice</xs:documentation>
+                </xs:annotation>
+                <xs:sequence>
+                    <xs:element name="INVOICE" type="ns0:InvoicePayType"/>
+                    <xs:element name="REMARKS" type="ns0:Remark" minOccurs="0"/>
+                </xs:sequence>
+                <xs:attribute name="OFFICE" use="required" type="ns0:Office"/>
+                <xs:attribute name="SEQ" use="required" type="ns0:Seq"/>
+                <xs:attribute name="SOURCE" use="required" type="ns0:PaymentSource"/>
+                <xs:attribute name="TDATE" use="required" type="ns0:Date"/>
+                <xs:attribute name="TID" use="required" type="ns0:TID"/>
+                <xs:attribute name="TYPE" use="required" type="ns0:PaymentType"/>
+                <xs:attribute name="USER" use="required" type="ns0:User"/>
+            </xs:complexType>
+            <xs:simpleType name="PaymentSource">
+                <xs:annotation>
+                    <xs:documentation>ID of the source system, submitting a payment.</xs:documentation>
+                </xs:annotation>
+                <xs:restriction base="xs:int">
+                    <xs:totalDigits value="9"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="PaymentType">
+                <xs:annotation>
+                    <xs:documentation>Describes the type of the payment (from where payment comes). </xs:documentation>
+                </xs:annotation>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="BANK"/>
+                    <xs:enumeration value="ATM"/>
+                    <xs:enumeration value="CASH"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="Quantity">
+                <xs:restriction base="xs:int">
+                    <xs:totalDigits value="4"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="Reference">
+                <xs:annotation>
+                    <xs:documentation>Alphanumeric Identifier submitted for reference for Customer Account</xs:documentation>
+                </xs:annotation>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="26"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:complexType name="ReleaseDepositType">
+                <xs:annotation>
+                    <xs:documentation>Designates request for back out or withdraw</xs:documentation>
+                </xs:annotation>
+                <xs:sequence>
+                    <xs:element name="DEPOSIT" type="ns0:DepositType"/>
+                </xs:sequence>
+                <xs:attribute name="OFFICE" use="required" type="ns0:Office"/>
+                <xs:attribute name="TDATE" use="required" type="ns0:Date"/>
+                <xs:attribute name="TID" use="required" type="ns0:TID"/>
+                <xs:attribute name="USER" use="required" type="ns0:User"/>
+            </xs:complexType>
+            <xs:complexType name="ReleaseInvoiceType">
+                <xs:annotation>
+                    <xs:documentation>Designates request for back out or withdraw</xs:documentation>
+                </xs:annotation>
+                <xs:sequence>
+                    <xs:element name="BACKOUT" type="xs:anyType"/>
+                </xs:sequence>
+                <xs:attribute name="OFFICE" use="required" type="ns0:Office"/>
+                <xs:attribute name="TID" use="required" type="ns0:TID"/>
+                <xs:attribute name="USER" use="required" type="ns0:User"/>
+            </xs:complexType>
+            <xs:simpleType name="Remark">
+                <xs:annotation>
+                    <xs:documentation>Any notes, comments, additional info etc.</xs:documentation>
+                </xs:annotation>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="200"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:complexType name="ResponseActionType">
+                <xs:annotation>
+                    <xs:documentation>Common response type containing the error code end description</xs:documentation>
+                </xs:annotation>
+                <xs:sequence>
+                    <xs:element name="RESPONSE">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="RETCODE" type="ns0:RetcodeType"/>
+                            </xs:sequence>
+                            <xs:attribute name="VERSION" type="ns0:Version"/>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="RetcodeType">
+                <xs:annotation>
+                    <xs:documentation>Return code with description</xs:documentation>
+                </xs:annotation>
+                <xs:attribute name="DESC" use="required" type="ns0:ErrorDescription"/>
+                <xs:attribute name="ID" use="required" type="ns0:ErrorCode"/>
+            </xs:complexType>
+            <xs:complexType name="SalesInvoiceInfoType">
+                <xs:annotation>
+                    <xs:documentation>Invoice information received from Billing for Sales Invoice</xs:documentation>
+                </xs:annotation>
+                <xs:sequence>
+                    <xs:element name="ITEM" type="ns0:SalesInvoiceItemType" maxOccurs="unbounded"/>
+                </xs:sequence>
+                <xs:attribute name="ID" use="required" type="ns0:InvoiceID"/>
+                <xs:attribute name="TYPE" use="required" type="ns0:SalesInvoiceType"/>
+            </xs:complexType>
+            <xs:complexType name="SalesInvoiceItemType">
+                <xs:attribute name="DESC" use="required" type="ns0:Description"/>
+                <xs:attribute name="QUANTITY" use="required" type="ns0:Quantity"/>
+                <xs:attribute name="TAX" use="required" type="ns0:Amount"/>
+                <xs:attribute name="TAXABLE" use="required" type="ns0:Amount"/>
+                <xs:attribute name="TAXID" use="required">
+                    <xs:simpleType>
+                        <xs:restriction base="ns0:TaxCodeID"/>
+                    </xs:simpleType>
+                </xs:attribute>
+                <xs:attribute name="TOTAL" use="required" type="ns0:Amount"/>
+                <xs:attribute name="T_PERCENT_RATE" use="required">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:decimal">
+                            <xs:totalDigits value="7"/>
+                            <xs:fractionDigits value="2"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:attribute>
+            </xs:complexType>
+            <xs:simpleType name="SalesInvoiceType">
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="SALES"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="Seq">
+                <xs:restriction base="xs:integer">
+                    <xs:totalDigits value="9"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="SubType">
+                <xs:annotation>
+                    <xs:documentation>Type of the POS device, etc</xs:documentation>
+                </xs:annotation>
+                <xs:restriction base="xs:int">
+                    <xs:totalDigits value="9"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="SubscriptionID">
+                <xs:restriction base="xs:int">
+                    <xs:totalDigits value="9"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:complexType name="SubscriptionInfoType">
+                <xs:attribute name="ID" use="required" type="ns0:SubscriptionID"/>
+                <xs:attribute name="MSISDN" use="required" type="ns0:MSISDN"/>
+                <xs:attribute name="NBB" use="required" type="ns0:Amount"/>
+            </xs:complexType>
+            <xs:simpleType name="TID">
+                <xs:annotation>
+                    <xs:documentation>Transaction ID</xs:documentation>
+                </xs:annotation>
+                <xs:restriction base="xs:int">
+                    <xs:totalDigits value="9"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="TaxCodeID">
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="3"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:complexType name="TaxCodeType">
+                <xs:attribute name="ID" use="required" type="ns0:TaxCodeID"/>
+                <xs:attribute name="TAX" use="required" type="ns0:Amount"/>
+                <xs:attribute name="TAXABLE" use="required" type="ns0:Amount"/>
+                <xs:attribute name="TOTAL" use="required" type="ns0:Amount"/>
+                <xs:attribute name="T_PERCENT_RATE" use="required">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:decimal">
+                            <xs:totalDigits value="7"/>
+                            <xs:fractionDigits value="2"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:attribute>
+            </xs:complexType>
+            <xs:simpleType name="UnbilledBalanceIdentityType">
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="SUBSCRIPTION"/>
+                    <xs:enumeration value="MSISDN"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="User">
+                <xs:annotation>
+                    <xs:documentation>Currently logged user in Cashier System</xs:documentation>
+                </xs:annotation>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="30"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="Version">
+                <xs:restriction base="xs:string"/>
+            </xs:simpleType>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:service name="PaymentSystemService">
+        <wsdl:port name="PaymentServiceJMSEndpoint" binding="tns:PaymentServiceJMSEndpointBinding">
+            <soap:address location=""/>
+            <jms:connectionFactory>QueueConnectionFactory</jms:connectionFactory>
+            <jms:targetAddress destination="queue">MTEL.AmdocsBillingSystemServices.DEV1.PaymentService</jms:targetAddress>
+        </wsdl:port>
+        <wsdl:port name="PaymentServiceHTTPEndpoint" binding="tns:PaymentServiceHTTPEndpointBinding">
+            <soap:address location="http://kofa:11145/com_mtel_amdocs_billing_system_services/Processes/Services/PaymentSystemService/Interface/PaymentSystemService.serviceagent/PaymentServicePortEndpoint1"/>
+        </wsdl:port>
+    </wsdl:service>
+    <wsdl:portType name="PaymentServicePort">
+        <wsdl:operation name="getSalesInvoiceDetails">
+            <wsdl:input message="tns:getSalesInvoiceDetailsRequest"/>
+            <wsdl:output message="tns:getSalesInvoiceDetailsResponse"/>
+            <wsdl:fault name="ResponseFault" message="tns:ResponseFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="getUnbilledBalance">
+            <wsdl:input message="tns:getUnbilledBalanceRequest"/>
+            <wsdl:output message="tns:getUnbilledBalanceResponse"/>
+            <wsdl:fault name="ResponseFault" message="tns:ResponseFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="payDeposit">
+            <wsdl:input message="tns:payDepositRequest"/>
+            <wsdl:output message="tns:payDepositResponse"/>
+            <wsdl:fault name="ResponseFault" message="tns:ResponseFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="payInvoice">
+            <wsdl:input message="tns:payInvoiceRequest"/>
+            <wsdl:output message="tns:payInvoiceResponse"/>
+            <wsdl:fault name="ResponseFault" message="tns:ResponseFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="withdrawDeposit">
+            <wsdl:input message="tns:withdrawDepositRequest"/>
+            <wsdl:output message="tns:withdrawDepositResponse"/>
+            <wsdl:fault name="ResponseFault" message="tns:ResponseFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="backOutInvoice">
+            <wsdl:input message="tns:backOutInvoiceRequest"/>
+            <wsdl:output message="tns:backOutInvoiceResponse"/>
+            <wsdl:fault name="ResponseFault" message="tns:ResponseFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="getDeposits">
+            <wsdl:input message="tns:getDepositsRequest"/>
+            <wsdl:output message="tns:getDepositsResponse"/>
+            <wsdl:fault name="ResponseFault" message="tns:ResponseFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="getInvoices">
+            <wsdl:input message="tns:getInvoicesRequest"/>
+            <wsdl:output message="tns:getInvoicesResponse"/>
+            <wsdl:fault name="ResponseFault" message="tns:ResponseFault"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="PaymentServiceJMSEndpointBinding" type="tns:PaymentServicePort">
+        <soap:binding style="document" transport="http://www.tibco.com/namespaces/ws/2004/soap/binding/JMS"/>
+        <jms:binding messageFormat="Text"/>
+        <wsdl:operation name="getSalesInvoiceDetails">
+            <soap:operation style="document" soapAction="/com_mtel_amdocs_billing_system_services_payment/Processes/Services/PaymentSystemService/Interface/PaymentSystemService.serviceagent/PaymentServicePortEndpoint2/getSalesInvoiceDetails"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="parameters"/>
+            </wsdl:output>
+            <wsdl:fault name="ResponseFault">
+                <soap:fault use="literal" name="ResponseFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getUnbilledBalance">
+            <soap:operation style="document" soapAction="/com_mtel_amdocs_billing_system_services_payment/Processes/Services/PaymentSystemService/Interface/PaymentSystemService.serviceagent/PaymentServicePortEndpoint2/getUnbilledBalance"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="parameters"/>
+            </wsdl:output>
+            <wsdl:fault name="ResponseFault">
+                <soap:fault use="literal" name="ResponseFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="payDeposit">
+            <soap:operation style="document" soapAction="/com_mtel_amdocs_billing_system_services_payment/Processes/Services/PaymentSystemService/Interface/PaymentSystemService.serviceagent/PaymentServicePortEndpoint2/payDeposit"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="parameters"/>
+            </wsdl:output>
+            <wsdl:fault name="ResponseFault">
+                <soap:fault use="literal" name="ResponseFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="payInvoice">
+            <soap:operation style="document" soapAction="/com_mtel_amdocs_billing_system_services_payment/Processes/Services/PaymentSystemService/Interface/PaymentSystemService.serviceagent/PaymentServicePortEndpoint2/payInvoice"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="parameters"/>
+            </wsdl:output>
+            <wsdl:fault name="ResponseFault">
+                <soap:fault use="literal" name="ResponseFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="withdrawDeposit">
+            <soap:operation style="document" soapAction="/com_mtel_amdocs_billing_system_services_payment/Processes/Services/PaymentSystemService/Interface/PaymentSystemService.serviceagent/PaymentServicePortEndpoint2/withdrawDeposit"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="parameters"/>
+            </wsdl:output>
+            <wsdl:fault name="ResponseFault">
+                <soap:fault use="literal" name="ResponseFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="backOutInvoice">
+            <soap:operation style="document" soapAction="/com_mtel_amdocs_billing_system_services_payment/Processes/Services/PaymentSystemService/Interface/PaymentSystemService.serviceagent/PaymentServicePortEndpoint2/backOutInvoice"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="parameters"/>
+            </wsdl:output>
+            <wsdl:fault name="ResponseFault">
+                <soap:fault use="literal" name="ResponseFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getDeposits">
+            <soap:operation style="document" soapAction="/com_mtel_amdocs_billing_system_services_payment/Processes/Services/PaymentSystemService/Interface/PaymentSystemService.serviceagent/PaymentServicePortEndpoint2/getDeposits"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="parameters"/>
+            </wsdl:output>
+            <wsdl:fault name="ResponseFault">
+                <soap:fault use="literal" name="ResponseFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getInvoices">
+            <soap:operation style="document" soapAction="/com_mtel_amdocs_billing_system_services_payment/Processes/Services/PaymentSystemService/Interface/PaymentSystemService.serviceagent/PaymentServicePortEndpoint2/getInvoices"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="parameters"/>
+            </wsdl:output>
+            <wsdl:fault name="ResponseFault">
+                <soap:fault use="literal" name="ResponseFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="PaymentServiceHTTPEndpointBinding" type="tns:PaymentServicePort">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="getSalesInvoiceDetails">
+            <soap:operation style="document" soapAction="/com_mtel_amdocs_billing_system_services/Processes/Services/PaymentSystemService/Interface/PaymentSystemService.serviceagent/PaymentServicePortEndpoint1/getSalesInvoiceDetails"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="parameters"/>
+            </wsdl:output>
+            <wsdl:fault name="ResponseFault">
+                <soap:fault use="literal" name="ResponseFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getUnbilledBalance">
+            <soap:operation style="document" soapAction="/com_mtel_amdocs_billing_system_services/Processes/Services/PaymentSystemService/Interface/PaymentSystemService.serviceagent/PaymentServicePortEndpoint1/getUnbilledBalance"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="parameters"/>
+            </wsdl:output>
+            <wsdl:fault name="ResponseFault">
+                <soap:fault use="literal" name="ResponseFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="payDeposit">
+            <soap:operation style="document" soapAction="/com_mtel_amdocs_billing_system_services/Processes/Services/PaymentSystemService/Interface/PaymentSystemService.serviceagent/PaymentServicePortEndpoint1/payDeposit"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="parameters"/>
+            </wsdl:output>
+            <wsdl:fault name="ResponseFault">
+                <soap:fault use="literal" name="ResponseFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="payInvoice">
+            <soap:operation style="document" soapAction="/com_mtel_amdocs_billing_system_services/Processes/Services/PaymentSystemService/Interface/PaymentSystemService.serviceagent/PaymentServicePortEndpoint1/payInvoice"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="parameters"/>
+            </wsdl:output>
+            <wsdl:fault name="ResponseFault">
+                <soap:fault use="literal" name="ResponseFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="withdrawDeposit">
+            <soap:operation style="document" soapAction="/com_mtel_amdocs_billing_system_services/Processes/Services/PaymentSystemService/Interface/PaymentSystemService.serviceagent/PaymentServicePortEndpoint1/withdrawDeposit"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="parameters"/>
+            </wsdl:output>
+            <wsdl:fault name="ResponseFault">
+                <soap:fault use="literal" name="ResponseFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="backOutInvoice">
+            <soap:operation style="document" soapAction="/com_mtel_amdocs_billing_system_services/Processes/Services/PaymentSystemService/Interface/PaymentSystemService.serviceagent/PaymentServicePortEndpoint1/backOutInvoice"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="parameters"/>
+            </wsdl:output>
+            <wsdl:fault name="ResponseFault">
+                <soap:fault use="literal" name="ResponseFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getDeposits">
+            <soap:operation style="document" soapAction="/com_mtel_amdocs_billing_system_services/Processes/Services/PaymentSystemService/Interface/PaymentSystemService.serviceagent/PaymentServicePortEndpoint1/getDeposits"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="parameters"/>
+            </wsdl:output>
+            <wsdl:fault name="ResponseFault">
+                <soap:fault use="literal" name="ResponseFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getInvoices">
+            <soap:operation style="document" soapAction="/com_mtel_amdocs_billing_system_services/Processes/Services/PaymentSystemService/Interface/PaymentSystemService.serviceagent/PaymentServicePortEndpoint1/getInvoices"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="parameters"/>
+            </wsdl:output>
+            <wsdl:fault name="ResponseFault">
+                <soap:fault use="literal" name="ResponseFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:message name="getSalesInvoiceDetailsRequest">
+        <wsdl:part name="parameters" element="ns0:getSalesInvoiceDetailsRequest"/>
+    </wsdl:message>
+    <wsdl:message name="getSalesInvoiceDetailsResponse">
+        <wsdl:part name="parameters" element="ns0:getSalesInvoiceDetailsResponse"/>
+    </wsdl:message>
+    <wsdl:message name="ResponseFault">
+        <wsdl:part name="ResponseFault" element="ns0:ResponseFault"/>
+    </wsdl:message>
+    <wsdl:message name="getUnbilledBalanceRequest">
+        <wsdl:part name="parameters" element="ns0:getUnbilledBalanceRequest"/>
+    </wsdl:message>
+    <wsdl:message name="getUnbilledBalanceResponse">
+        <wsdl:part name="parameters" element="ns0:getUnbilledBalanceResponse"/>
+    </wsdl:message>
+    <wsdl:message name="payDepositRequest">
+        <wsdl:part name="parameters" element="ns0:payDepositRequest"/>
+    </wsdl:message>
+    <wsdl:message name="payDepositResponse">
+        <wsdl:part name="parameters" element="ns0:payDepositResponse"/>
+    </wsdl:message>
+    <wsdl:message name="payInvoiceRequest">
+        <wsdl:part name="parameters" element="ns0:payInvoiceReques"/>
+    </wsdl:message>
+    <wsdl:message name="payInvoiceResponse">
+        <wsdl:part name="parameters" element="ns0:payInvoiceResponse"/>
+    </wsdl:message>
+    <wsdl:message name="withdrawDepositRequest">
+        <wsdl:part name="parameters" element="ns0:withdrawDepositRequest"/>
+    </wsdl:message>
+    <wsdl:message name="withdrawDepositResponse">
+        <wsdl:part name="parameters" element="ns0:withdrawDepositResponse"/>
+    </wsdl:message>
+    <wsdl:message name="backOutInvoiceRequest">
+        <wsdl:part name="parameters" element="ns0:backOutInvoiceRequest"/>
+    </wsdl:message>
+    <wsdl:message name="backOutInvoiceResponse">
+        <wsdl:part name="parameters" element="ns0:backOutInvoiceResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getDepositsRequest">
+        <wsdl:part name="parameters" element="ns0:getDepositsRequest"/>
+    </wsdl:message>
+    <wsdl:message name="getDepositsResponse">
+        <wsdl:part name="parameters" element="ns0:getDepositsResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getInvoicesRequest">
+        <wsdl:part name="parameters" element="ns0:getInvoicesRequest"/>
+    </wsdl:message>
+    <wsdl:message name="getInvoicesResponse">
+        <wsdl:part name="parameters" element="ns0:getInvoicesResponse"/>
+    </wsdl:message>
+</wsdl:definitions>

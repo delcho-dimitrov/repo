@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	 xmlns:m="http://www.mobiltel.bg/integration"
+	 xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	 targetNamespace="http://www.mobiltel.bg/integration"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<element name="ChargeRequest">
+		<complexType>
+			<sequence>
+				<element name="MSISDN">
+					<simpleType>
+						<restriction base="xsd:integer">
+							<totalDigits value="12"/>
+						</restriction>
+					</simpleType>
+				</element>
+				<element name="Amount" minOccurs="0">
+					<simpleType>
+						<restriction base="xsd:decimal">
+							<fractionDigits value="2"/>
+						</restriction>
+					</simpleType>
+				</element>
+				<element name="BasicService" minOccurs="0">
+					<simpleType>
+						<restriction base="xsd:int">
+							<fractionDigits value="3"/>
+						</restriction>
+					</simpleType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

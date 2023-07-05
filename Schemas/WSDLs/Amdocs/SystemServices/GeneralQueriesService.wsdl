@@ -1,0 +1,2480 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Created by TIBCO WSDL-->
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://mtel.bg/AmdocsBilling/SystemServices/GeneralQueriesService" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap1="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:jms="http://www.tibco.com/namespaces/ws/2004/soap/binding/JMS" xmlns:jndi="http://www.tibco.com/namespaces/ws/2004/soap/apis/jndi" xmlns:ns0="http://mtel.bg/AmdocsBilling/SystemServices/GeneralQueriesServiceTypes" xmlns:ns1="http://mtel.bg/Common/CommonElements" xmlns:ns2="http://mtel.bg/Common/AmdocsBilling/CommonTypes" xmlns:ns3="http://mtel.bg/Common/CommonTypes" xmlns:ns4="http://mtel.bg/AmdocsBilling/SystemServices/GeneralQueriesServiceCommonTypes" name="Untitled" targetNamespace="http://mtel.bg/AmdocsBilling/SystemServices/GeneralQueriesService">
+    <wsdl:import namespace="http://mtel.bg/Common/CommonElements" location="../../../../com_mtel_til_common/Resources/Schemas/XSD/Common/CommonElements.xsd"/>
+    <wsdl:types>
+        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:local="http://mtel.bg/AmdocsBilling/SystemServices/GeneralQueriesServiceTypes" xmlns:service="http://mtel.bg/AmdocsBilling/SystemServices/GeneralQueriesServiceCommonTypes" xmlns:CommonTypes="http://mtel.bg/AmdocsBilling/AmdocsBillingCommonTypes" xmlns:ns1="http://mtel.bg/Common/CommonTypes" xmlns:ns2="http://mtel.bg/Common/AmdocsBillingCommonTypes" targetNamespace="http://mtel.bg/AmdocsBilling/SystemServices/GeneralQueriesServiceTypes" elementFormDefault="unqualified" attributeFormDefault="unqualified">
+            <xs:import namespace="http://mtel.bg/AmdocsBilling/SystemServices/GeneralQueriesServiceCommonTypes"/>
+            <xs:import namespace="http://mtel.bg/Common/CommonTypes"/>
+            <xs:complexType name="ChangeSubscriberStatusRequestType">
+                <xs:complexContent>
+                    <xs:extension base="ns1:BaseInterfaceRequestType">
+                        <xs:sequence>
+                            <xs:element name="RequestBody" type="service:ChangeSubscriberStatusRequestType"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="ChangeSubscriberStatusResponseType">
+                <xs:complexContent>
+                    <xs:extension base="ns1:BaseInterfaceResponseType"/>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="CheckSameGroupMembershipRequestType">
+                <xs:complexContent>
+                    <xs:extension base="ns1:BaseInterfaceRequestType">
+                        <xs:sequence>
+                            <xs:element name="RequestBody" type="service:CheckSameGroupMembershipRequestType"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="CheckSameGroupMembershipResponseType">
+                <xs:complexContent>
+                    <xs:extension base="ns1:BaseInterfaceResponseType">
+                        <xs:sequence>
+                            <xs:element name="ResponseBody" type="service:CheckSameGroupMembershipResponseType"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="CreateCustomerDebitRequestType">
+                <xs:complexContent>
+                    <xs:extension base="ns1:BaseInterfaceRequestType">
+                        <xs:sequence>
+                            <xs:element name="RequestBody" type="service:CreateCustomerDebitRequestType"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="CreateCustomerDebitResponseType">
+                <xs:complexContent>
+                    <xs:extension base="ns1:BaseInterfaceResponseType"/>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="GetBankDetailsByBARRequestType">
+                <xs:complexContent>
+                    <xs:extension base="ns1:BaseInterfaceRequestType">
+                        <xs:sequence>
+                            <xs:element name="RequestBody" type="service:GetBankDetailsByBARRequestType"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="GetBankDetailsByBARResponseType">
+                <xs:complexContent>
+                    <xs:extension base="ns1:BaseInterfaceResponseType">
+                        <xs:sequence>
+                            <xs:element name="ResponseBody" type="service:GetBankDetailsByBARResponseType"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="GetBudgetControlDetailsRequestType">
+                <xs:complexContent>
+                    <xs:extension base="ns1:BaseInterfaceRequestType">
+                        <xs:sequence>
+                            <xs:element name="RequestBody" type="service:GetBudgetControlDetailsRequestType"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="GetBudgetControlDetailsResponseType">
+                <xs:complexContent>
+                    <xs:extension base="ns1:BaseInterfaceResponseType">
+                        <xs:sequence>
+                            <xs:element name="ResponseBody" type="service:GetBudgetControlDetailsResponseType"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="GetCustomerDataBySubscriberRequestType">
+                <xs:complexContent>
+                    <xs:extension base="ns1:BaseInterfaceRequestType">
+                        <xs:sequence>
+                            <xs:element name="RequestBody" type="service:GetCustomerDataBySubscriberRequestType"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="GetCustomerDataBySubscriberResponseType">
+                <xs:complexContent>
+                    <xs:extension base="ns1:BaseInterfaceResponseType">
+                        <xs:sequence>
+                            <xs:element name="ResponseBody" type="service:GetCustomerDataBySubscriberResponseType"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="GetCustomerOpenInvoiceListRequestType">
+                <xs:complexContent>
+                    <xs:extension base="ns1:BaseInterfaceRequestType">
+                        <xs:sequence>
+                            <xs:element name="RequestBody" type="service:GetCustomerOpenInvoiceListRequestType"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="GetCustomerOpenInvoiceListResponseType">
+                <xs:complexContent>
+                    <xs:extension base="ns1:BaseInterfaceResponseType">
+                        <xs:sequence>
+                            <xs:element name="ResponseBody" type="service:GetCustomerOpenInvoiceListResponseType"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="GetCustomerVATRequestType">
+                <xs:complexContent>
+                    <xs:extension base="ns1:BaseInterfaceRequestType">
+                        <xs:sequence>
+                            <xs:element name="RequestBody" type="service:GetCustomerVATRequestType"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="GetCustomerVATResponseType">
+                <xs:complexContent>
+                    <xs:extension base="ns1:BaseInterfaceResponseType">
+                        <xs:sequence>
+                            <xs:element name="ResponseBody" type="service:GetCustomerVATResponseType"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="GetCycleInfoRequestType">
+                <xs:complexContent>
+                    <xs:extension base="ns1:BaseInterfaceRequestType">
+                        <xs:sequence>
+                            <xs:element name="RequestBody" type="service:GetCycleInfoRequestType"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="GetCycleInfoResponseType">
+                <xs:complexContent>
+                    <xs:extension base="ns1:BaseInterfaceResponseType">
+                        <xs:sequence>
+                            <xs:element name="ResponseBody" type="service:GetCycleInfoResponseType"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="GetGroupInfoRequestType">
+                <xs:complexContent>
+                    <xs:extension base="ns1:BaseInterfaceRequestType">
+                        <xs:sequence>
+                            <xs:element name="RequestBody" type="service:GetGroupInfoRequestType"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="GetGroupInfoResponseType">
+                <xs:complexContent>
+                    <xs:extension base="ns1:BaseInterfaceResponseType">
+                        <xs:sequence>
+                            <xs:element name="ResponseBody" type="service:GetGroupInfoResponseType"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="GetMSISDNByPIDContractRequestType">
+                <xs:complexContent>
+                    <xs:extension base="ns1:BaseInterfaceRequestType">
+                        <xs:sequence>
+                            <xs:element name="RequestBody" type="service:GetMSISDNByPIDContractRequestType"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="GetMSISDNByPIDContractResponseType">
+                <xs:complexContent>
+                    <xs:extension base="ns1:BaseInterfaceResponseType">
+                        <xs:sequence>
+                            <xs:element name="ResponseBody" type="service:GetMSISDNByPIDContractResponseType"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="GetMSISDNListByBANRequestType">
+                <xs:complexContent>
+                    <xs:extension base="ns1:BaseInterfaceRequestType">
+                        <xs:sequence>
+                            <xs:element name="RequestBody" type="service:GetMSISDNListByBANRequestType"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="GetMSISDNListByBANResponseType">
+                <xs:complexContent>
+                    <xs:extension base="ns1:BaseInterfaceResponseType">
+                        <xs:sequence>
+                            <xs:element name="ResponseBody" type="service:GetMSISDNListByBANResponseType"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="GetPortOutMSISDNCheckRequestType">
+                <xs:complexContent>
+                    <xs:extension base="ns1:BaseInterfaceRequestType">
+                        <xs:sequence>
+                            <xs:element name="RequestBody" type="service:GetPortOutMSISDNCheckRequestType"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="GetPortOutMSISDNCheckResponseType">
+                <xs:complexContent>
+                    <xs:extension base="ns1:BaseInterfaceResponseType">
+                        <xs:sequence>
+                            <xs:element name="ResponseBody" type="service:GetPortOutMSISDNCheckResponseType"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="GetSubscriberBENInfoRequestType">
+                <xs:complexContent>
+                    <xs:extension base="ns1:BaseInterfaceRequestType">
+                        <xs:sequence>
+                            <xs:element name="RequestBody" type="service:GetSubscriberBENInfoRequestType"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="GetSubscriberBENInfoResponseType">
+                <xs:complexContent>
+                    <xs:extension base="ns1:BaseInterfaceResponseType">
+                        <xs:sequence>
+                            <xs:element name="ResponseBody" type="service:GetSubscriberBENInfoResponseType"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="GetSubscriberEntityIDsRequestType">
+                <xs:complexContent>
+                    <xs:extension base="ns1:BaseInterfaceRequestType">
+                        <xs:sequence>
+                            <xs:element name="RequestBody" type="service:GetSubscriberEntityIDsRequestType"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="GetSubscriberEntityIDsResponseType">
+                <xs:complexContent>
+                    <xs:extension base="ns1:BaseInterfaceResponseType">
+                        <xs:sequence>
+                            <xs:element name="ResponseBody" type="service:GetSubscriberEntityIDsResponseType"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="GetSubscriberInfoByBANRequestType">
+                <xs:complexContent>
+                    <xs:extension base="ns1:BaseInterfaceRequestType">
+                        <xs:sequence>
+                            <xs:element name="RequestBody" type="service:GetSubscriberInfoByBANRequestType"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="GetSubscriberInfoByBANResponseType">
+                <xs:complexContent>
+                    <xs:extension base="ns1:BaseInterfaceResponseType">
+                        <xs:sequence>
+                            <xs:element name="ResponseBody" type="service:GetSubscriberInfoByBANResponseType"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="GetSubscriberInfoRequestType">
+                <xs:complexContent>
+                    <xs:extension base="ns1:BaseInterfaceRequestType">
+                        <xs:sequence>
+                            <xs:element name="RequestBody" type="service:GetSubscriberInfoRequestType"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="GetSubscriberInfoResponseType">
+                <xs:complexContent>
+                    <xs:extension base="ns1:BaseInterfaceResponseType">
+                        <xs:sequence>
+                            <xs:element name="ResponseBody" type="service:GetSubscriberInfoResponseType"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="GetSubscriberLTAInfoRequestType">
+                <xs:complexContent>
+                    <xs:extension base="ns1:BaseInterfaceRequestType">
+                        <xs:sequence>
+                            <xs:element name="RequestBody" type="service:GetSubscriberLTAInfoRequestType"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="GetSubscriberLTAInfoResponseType">
+                <xs:complexContent>
+                    <xs:extension base="ns1:BaseInterfaceResponseType">
+                        <xs:sequence>
+                            <xs:element name="ResponseBody" type="service:GetSubscriberLTAInfoResponseType"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="GetSubscriberOpenInvoiceListRequestType">
+                <xs:complexContent>
+                    <xs:extension base="ns1:BaseInterfaceRequestType">
+                        <xs:sequence>
+                            <xs:element name="RequestBody" type="service:GetSubscriberOpenInvoiceListRequestType"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="GetSubscriberOpenInvoiceListResponseType">
+                <xs:complexContent>
+                    <xs:extension base="ns1:BaseInterfaceResponseType">
+                        <xs:sequence>
+                            <xs:element name="ResponseBody" type="service:GetSubscriberOpenInvoiceListResponseType"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="ListAllCUGsOfMSISDNRequestType">
+                <xs:complexContent>
+                    <xs:extension base="ns1:BaseInterfaceRequestType">
+                        <xs:sequence>
+                            <xs:element name="RequestBody" type="service:ListAllCUGsOfMSISDNRequestType"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="ListAllCUGsOfMSISDNResponseType">
+                <xs:complexContent>
+                    <xs:extension base="ns1:BaseInterfaceResponseType">
+                        <xs:sequence>
+                            <xs:element name="ResponseBody" type="service:ListAllCUGsOfMSISDNResponseType"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="UpdateBENInfoRequestType">
+                <xs:complexContent>
+                    <xs:extension base="ns1:BaseInterfaceRequestType">
+                        <xs:sequence>
+                            <xs:element name="RequestBody" type="service:UpdateBENInfoRequestType"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="UpdateBENInfoResponseType">
+                <xs:complexContent>
+                    <xs:extension base="ns1:BaseInterfaceResponseType"/>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:element name="ChangeSubscriberStatusRequest" type="local:ChangeSubscriberStatusRequestType"/>
+            <xs:element name="ChangeSubscriberStatusResponse" type="local:ChangeSubscriberStatusResponseType"/>
+            <xs:element name="CheckSameGroupMembershipRequest" type="local:CheckSameGroupMembershipRequestType"/>
+            <xs:element name="CheckSameGroupMembershipResponse" type="local:CheckSameGroupMembershipResponseType"/>
+            <xs:element name="CreateCustomerDebitRequest" type="local:CreateCustomerDebitRequestType"/>
+            <xs:element name="CreateCustomerDebitResponse" type="local:CreateCustomerDebitResponseType"/>
+            <xs:element name="GetBankDetailsByBARRequest" type="local:GetBankDetailsByBARRequestType"/>
+            <xs:element name="GetBankDetailsByBARResponse" type="local:GetBankDetailsByBARResponseType"/>
+            <xs:element name="GetBudgetControlDetailsRequest" type="local:GetBudgetControlDetailsRequestType"/>
+            <xs:element name="GetBudgetControlDetailsResponse" type="local:GetBudgetControlDetailsResponseType"/>
+            <xs:element name="GetCustomerDataBySubscriberRequest" type="local:GetCustomerDataBySubscriberRequestType"/>
+            <xs:element name="GetCustomerDataBySubscriberResponse" type="local:GetCustomerDataBySubscriberResponseType"/>
+            <xs:element name="GetCustomerOpenInvoiceListRequest" type="local:GetCustomerOpenInvoiceListRequestType"/>
+            <xs:element name="GetCustomerOpenInvoiceListResponse" type="local:GetCustomerOpenInvoiceListResponseType"/>
+            <xs:element name="GetCustomerVATRequest" type="local:GetCustomerVATRequestType"/>
+            <xs:element name="GetCustomerVATResponse" type="local:GetCustomerVATResponseType"/>
+            <xs:element name="GetCycleInfoRequest" type="local:GetCycleInfoRequestType"/>
+            <xs:element name="GetCycleInfoResponse" type="local:GetCycleInfoResponseType"/>
+            <xs:element name="GetGroupInfoRequest" type="local:GetGroupInfoRequestType"/>
+            <xs:element name="GetGroupInfoResponse" type="local:GetGroupInfoResponseType"/>
+            <xs:element name="GetMSISDNByPIDContractRequest" type="local:GetMSISDNByPIDContractRequestType"/>
+            <xs:element name="GetMSISDNByPIDContractResponse" type="local:GetMSISDNByPIDContractResponseType"/>
+            <xs:element name="GetMSISDNListByBANRequest" type="local:GetMSISDNListByBANRequestType"/>
+            <xs:element name="GetMSISDNListByBANResponse" type="local:GetMSISDNListByBANResponseType"/>
+            <xs:element name="GetPortOutMSISDNCheckRequest" type="local:GetPortOutMSISDNCheckRequestType"/>
+            <xs:element name="GetPortOutMSISDNCheckResponse" type="local:GetPortOutMSISDNCheckResponseType"/>
+            <xs:element name="GetSubscriberBENInfoRequest" type="local:GetSubscriberBENInfoRequestType"/>
+            <xs:element name="GetSubscriberBENInfoResponse" type="local:GetSubscriberBENInfoResponseType"/>
+            <xs:element name="GetSubscriberEntityIDsRequest" type="local:GetSubscriberEntityIDsRequestType"/>
+            <xs:element name="GetSubscriberEntityIDsResponse" type="local:GetSubscriberEntityIDsResponseType"/>
+            <xs:element name="GetSubscriberInfoByBANRequest" type="local:GetSubscriberInfoByBANRequestType"/>
+            <xs:element name="GetSubscriberInfoByBANResponse" type="local:GetSubscriberInfoByBANResponseType"/>
+            <xs:element name="GetSubscriberInfoRequest" type="local:GetSubscriberInfoRequestType"/>
+            <xs:element name="GetSubscriberInfoResponse" type="local:GetSubscriberInfoResponseType"/>
+            <xs:element name="GetSubscriberLTAInfoRequest" type="local:GetSubscriberLTAInfoRequestType"/>
+            <xs:element name="GetSubscriberLTAInfoResponse" type="local:GetSubscriberLTAInfoResponseType"/>
+            <xs:element name="GetSubscriberOpenInvoiceListRequest" type="local:GetSubscriberOpenInvoiceListRequestType"/>
+            <xs:element name="GetSubscriberOpenInvoiceListResponse" type="local:GetSubscriberOpenInvoiceListResponseType"/>
+            <xs:element name="ListAllCUGsOfMSISDNRequest" type="local:ListAllCUGsOfMSISDNRequestType"/>
+            <xs:element name="ListAllCUGsOfMSISDNResponse" type="local:ListAllCUGsOfMSISDNResponseType"/>
+            <xs:element name="UpdateBENInfoRequest" type="local:UpdateBENInfoRequestType"/>
+            <xs:element name="UpdateBENInfoResponse" type="local:UpdateBENInfoResponseType"/>
+        </xs:schema>
+        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:commonBilling="http://mtel.bg/Common/AmdocsBilling/CommonTypes" targetNamespace="http://mtel.bg/Common/AmdocsBilling/CommonTypes" elementFormDefault="unqualified" attributeFormDefault="unqualified">
+            <xs:simpleType name="BANID">
+                <xs:restriction base="xs:int">
+                    <xs:totalDigits value="9"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="BENID">
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="32"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="BillingCycle">
+                <xs:restriction base="xs:int">
+                    <xs:maxInclusive value="99"/>
+                    <xs:minInclusive value="0"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="BillingMedia">
+                <xs:annotation>
+                    <xs:documentation>“S” – softcopy; “P” – Printout
+				Complete list is taken from x_bill_media UDP on GT tools
+			</xs:documentation>
+                </xs:annotation>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="1"/>
+                    <xs:enumeration value="S"/>
+                    <xs:enumeration value="P"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="ContractNumber">
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="40"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="Currency">
+                <xs:restriction base="xs:string">
+                    <xs:minLength value="1"/>
+                    <xs:maxLength value="1"/>
+                    <xs:enumeration value="A"/>
+                    <xs:enumeration value="E"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:complexType name="DocumentType">
+                <xs:sequence>
+                    <xs:element name="CreationDate" type="xs:date"/>
+                    <xs:element name="RequestID" type="xs:int"/>
+                    <xs:element name="SubscriberNo" type="commonBilling:SubscriberNo"/>
+                    <xs:element name="TemplateID" type="xs:string"/>
+                    <xs:element name="DocumentVariablesList" minOccurs="0">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="Variable" minOccurs="0" maxOccurs="unbounded">
+                                    <xs:complexType>
+                                        <xs:sequence>
+                                            <xs:element name="Name" type="xs:string"/>
+                                            <xs:element name="Value" type="xs:string"/>
+                                        </xs:sequence>
+                                    </xs:complexType>
+                                </xs:element>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:simpleType name="FilterType">
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="startsWith"/>
+                    <xs:enumeration value="endsWith"/>
+                    <xs:enumeration value="contain"/>
+                    <xs:enumeration value="equal"/>
+                    <xs:enumeration value="notEqual"/>
+                    <xs:enumeration value="in"/>
+                    <xs:enumeration value="After"/>
+                    <xs:enumeration value="Between"/>
+                    <xs:enumeration value="equal"/>
+                    <xs:enumeration value="notEqual"/>
+                    <xs:enumeration value="greater"/>
+                    <xs:enumeration value="grreaterOrEqual"/>
+                    <xs:enumeration value="less"/>
+                    <xs:enumeration value="lessOrEqual"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:complexType name="FilteredInfoListType">
+                <xs:sequence>
+                    <xs:element name="FilteredInfo" type="commonBilling:FilteredInfoType" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="FilteredInfoType">
+                <xs:sequence>
+                    <xs:element name="FilterName" type="xs:string"/>
+                    <xs:element name="FilterType" type="commonBilling:FilterType"/>
+                    <xs:element name="FilterValue">
+                        <xs:complexType>
+                            <xs:choice>
+                                <xs:element name="FilterValueDate" type="xs:string"/>
+                                <xs:element name="FilterValueNumber" type="xs:double"/>
+                                <xs:element name="FilterValueString" type="xs:string"/>
+                            </xs:choice>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:simpleType name="IBAN">
+                <xs:annotation>
+                    <xs:documentation>International Bank Account Number </xs:documentation>
+                </xs:annotation>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="22"/>
+                    <xs:minLength value="22"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="IMSI">
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="15"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="InvoiceID">
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="20"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="InvoiceType">
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="2"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="MSISDN">
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="20"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="MSISDNType">
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="Pre-Paid"/>
+                    <xs:enumeration value="Postpaid"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="NL">
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="8"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="PID">
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="20"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="PIN">
+                <xs:annotation>
+                    <xs:documentation>PIN [0-9][0-9][0-9][0-9] - 0103</xs:documentation>
+                </xs:annotation>
+                <xs:restriction base="xs:string">
+                    <xs:pattern value="[0-9][0-9][0-9][0-9]"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="PUK">
+                <xs:annotation>
+                    <xs:documentation>PIN [0-9]{4,8} - 01034367</xs:documentation>
+                </xs:annotation>
+                <xs:restriction base="xs:string">
+                    <xs:pattern value="[0-9]{4,8}"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:complexType name="PagingRequestType">
+                <xs:sequence>
+                    <xs:element name="PageNumber" type="xs:int"/>
+                    <xs:element name="PageSize" type="xs:int"/>
+                    <xs:element name="NumberOfRows" type="xs:int" minOccurs="0"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="PagingResponseType">
+                <xs:sequence>
+                    <xs:element name="TotalCount" type="xs:int"/>
+                    <xs:element name="HasNext" type="xs:boolean"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:simpleType name="ResourceLevel">
+                <xs:annotation>
+                    <xs:documentation>“P” – Primary; 
+										“S” – Secondary
+			</xs:documentation>
+                </xs:annotation>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="P"/>
+                    <xs:enumeration value="S"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="RetentionCode">
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="3"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="SIMStatus">
+                <xs:annotation>
+                    <xs:documentation>
+				AA - ASSIGNED AVAILABLE;
+			  	AG - ASSIGNED AGEING;			
+				AI - ASSIGNED IN USE;			
+			 	AR - ASSIGNED RESERVED;			
+			  	NA - NOT ASSIGNED;			
+			  	OO - ON ORDER;			
+			  	TR - TERMINATED;			
+				AW - ASSIGNED WAITING;
+				</xs:documentation>
+                </xs:annotation>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="2"/>
+                    <xs:enumeration value="AA"/>
+                    <xs:enumeration value="AG"/>
+                    <xs:enumeration value="AI"/>
+                    <xs:enumeration value="AR"/>
+                    <xs:enumeration value="NA"/>
+                    <xs:enumeration value="OO"/>
+                    <xs:enumeration value="TR"/>
+                    <xs:enumeration value="AW"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:complexType name="SMSType">
+                <xs:sequence>
+                    <xs:element name="CreationDate" type="xs:date"/>
+                    <xs:element name="MessageText" type="xs:string"/>
+                    <xs:element name="RequestID" type="xs:int"/>
+                    <xs:element name="SubscriberNo" type="commonBilling:SubscriberNo"/>
+                    <xs:element name="TemplateID" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:simpleType name="SocCode">
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="9"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="SubscriberNo">
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="25"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="SubscriberStatus">
+                <xs:annotation>
+                    <xs:documentation>
+				A - ACTIVE, 
+				C - CANCELLED,
+				R - RESERVED,
+				S - SUSPENDED</xs:documentation>
+                </xs:annotation>
+                <xs:restriction base="xs:string">
+                    <xs:length value="1"/>
+                    <xs:enumeration value="A"/>
+                    <xs:enumeration value="C"/>
+                    <xs:enumeration value="R"/>
+                    <xs:enumeration value="S"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:element name="Document" type="commonBilling:DocumentType"/>
+            <xs:element name="SMS" type="commonBilling:SMSType"/>
+        </xs:schema>
+        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://mtel.bg/Common/CommonTypes" targetNamespace="http://mtel.bg/Common/CommonTypes" version="1.0.0" elementFormDefault="unqualified" attributeFormDefault="unqualified">
+            <xs:annotation>
+                <xs:documentation>The CommonTypes.xsd schema contains generic, reusable simple and complex types, 
+		which are not part of the business domain. It contains structures primarily from the BusinessWorks domain.
+		Contacts - Ivan Ivanov (ivan.ivanov@logicalfactor.com)</xs:documentation>
+            </xs:annotation>
+            <xs:complexType name="AnyType">
+                <xs:annotation>
+                    <xs:documentation> AnyType similar to the build in one but with processContents='skip'. The built in type named xsd:anyType has processContents='lax'. So it will reject some things that 'skip' will accept.</xs:documentation>
+                </xs:annotation>
+                <xs:sequence>
+                    <xs:any minOccurs="0" processContents="skip" namespace="##any"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:simpleType name="ApplicationID">
+                <xs:restriction base="xs:int"/>
+            </xs:simpleType>
+            <xs:simpleType name="ApplicationInstID">
+                <xs:restriction base="xs:int"/>
+            </xs:simpleType>
+            <xs:complexType name="ApplicationInstance">
+                <xs:sequence>
+                    <xs:element name="ApplicationID" type="ns3:ApplicationID"/>
+                    <xs:element name="Environment" type="ns3:Environment"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="BaseBackEndRequestType"/>
+            <xs:complexType name="BaseBackEndResponseType"/>
+            <xs:complexType name="BaseImplementationRequestType"/>
+            <xs:complexType name="BaseImplementationResponseType"/>
+            <xs:complexType name="BaseInterfaceRequestType">
+                <xs:sequence>
+                    <xs:element name="InterfaceRequestHeader" type="ns3:InterfaceRequestHeaderType"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="BaseInterfaceResponseType">
+                <xs:sequence>
+                    <xs:element name="InterfaceResponseHeader" type="ns3:InterfaceResponseHeaderType"/>
+                    <xs:element name="ResultStatus" type="ns3:ResultStatusType"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:simpleType name="CorrelationID">
+                <xs:restriction base="xs:string"/>
+            </xs:simpleType>
+            <xs:simpleType name="DataKey">
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="IfRequest"/>
+                    <xs:enumeration value="IfResponse"/>
+                    <xs:enumeration value="IfIntRequest"/>
+                    <xs:enumeration value="IfIntResponse"/>
+                    <xs:enumeration value="ImplRequest"/>
+                    <xs:enumeration value="ImplResponse"/>
+                    <xs:enumeration value="BeRequest"/>
+                    <xs:enumeration value="BeResponse"/>
+                    <xs:enumeration value="ErrorResponse"/>
+                    <xs:enumeration value="CustomData"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:complexType name="DataNotFoundFaultType">
+                <xs:annotation>
+                    <xs:documentation>Fault message type for no data found exception.</xs:documentation>
+                </xs:annotation>
+                <xs:complexContent>
+                    <xs:extension base="ns3:FaultType"/>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:simpleType name="DataValue">
+                <xs:restriction base="xs:string"/>
+            </xs:simpleType>
+            <xs:simpleType name="Description">
+                <xs:restriction base="xs:string"/>
+            </xs:simpleType>
+            <xs:simpleType name="Destination">
+                <xs:restriction base="xs:string"/>
+            </xs:simpleType>
+            <xs:simpleType name="DestinationSystem">
+                <xs:restriction base="xs:string"/>
+            </xs:simpleType>
+            <xs:simpleType name="EngineName">
+                <xs:restriction base="xs:string"/>
+            </xs:simpleType>
+            <xs:simpleType name="Environment">
+                <xs:restriction base="xs:string"/>
+            </xs:simpleType>
+            <xs:simpleType name="ErrorCodeType">
+                <xs:restriction base="xs:string">
+                    <xs:whiteSpace value="preserve"/>
+                    <xs:maxLength value="40"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="ErrorMsgType">
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="400"/>
+                    <xs:whiteSpace value="preserve"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:complexType name="ErrorReportType">
+                <xs:sequence>
+                    <xs:element name="StackTrace" type="xs:string" minOccurs="0"/>
+                    <xs:element name="Msg" type="xs:string"/>
+                    <xs:element name="FullClass" type="xs:string" minOccurs="0"/>
+                    <xs:element name="Class" type="xs:string"/>
+                    <xs:element name="ProcessStack" type="xs:string" minOccurs="0"/>
+                    <xs:element name="MsgCode" type="xs:string" minOccurs="0"/>
+                    <xs:element name="Data" minOccurs="0">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:any processContents="skip" namespace="##any"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ErrorResponseType">
+                <xs:sequence>
+                    <xs:element name="ResultStatus" type="ns3:ResultStatusType"/>
+                    <xs:element name="ErrorReport" type="ns3:ErrorReportType" minOccurs="0"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="FaultType">
+                <xs:annotation>
+                    <xs:documentation>Base fault type for all other faults being defined.</xs:documentation>
+                </xs:annotation>
+                <xs:sequence>
+                    <xs:element name="ErrorMsg" type="ns3:ErrorMsgType" minOccurs="0"/>
+                    <xs:element name="ErrorCode" type="ns3:ErrorCodeType"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:simpleType name="HeaderDateTime">
+                <xs:restriction base="xs:dateTime"/>
+            </xs:simpleType>
+            <xs:simpleType name="HostIP">
+                <xs:restriction base="xs:string"/>
+            </xs:simpleType>
+            <xs:simpleType name="HostName">
+                <xs:restriction base="xs:string"/>
+            </xs:simpleType>
+            <xs:complexType name="IllegalAPIUsageFaultType">
+                <xs:annotation>
+                    <xs:documentation>Fault message type for invalid API usage.</xs:documentation>
+                </xs:annotation>
+                <xs:complexContent>
+                    <xs:extension base="ns3:FaultType"/>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="IntegrationFaultType">
+                <xs:annotation>
+                    <xs:documentation>Fault message type for internal integration exception.</xs:documentation>
+                </xs:annotation>
+                <xs:complexContent>
+                    <xs:extension base="ns3:FaultType"/>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="InterfaceRequestHeaderType">
+                <xs:sequence>
+                    <xs:element name="RequestDateTime" type="ns3:HeaderDateTime" minOccurs="0"/>
+                    <xs:element name="SessionID" type="ns3:SessionID" minOccurs="0"/>
+                    <xs:element name="CorrelationID" type="ns3:CorrelationID" minOccurs="0"/>
+                    <xs:element name="SequenceNum" type="ns3:SequenceNum" minOccurs="0"/>
+                    <xs:element name="SourceSystem" type="ns3:SourceSystem" minOccurs="0"/>
+                    <xs:element name="TargetSystem" type="ns3:TargetSystem" minOccurs="0"/>
+                    <xs:element name="RequestClientHostName" type="ns3:HostName" minOccurs="0"/>
+                    <xs:element name="RequestClientHostIP" type="ns3:HostIP" minOccurs="0"/>
+                    <xs:element name="UserID" type="ns3:UserID" minOccurs="0"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="InterfaceResponseHeaderType">
+                <xs:sequence>
+                    <xs:element name="ResponseDateTime" type="ns3:HeaderDateTime"/>
+                    <xs:element name="TransactionID" type="ns3:TransactionID"/>
+                    <xs:element name="SessionID" type="ns3:SessionID" minOccurs="0"/>
+                    <xs:element name="CorrelationID" type="ns3:CorrelationID" minOccurs="0"/>
+                    <xs:element name="SequenceNum" type="ns3:SequenceNum" minOccurs="0"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:simpleType name="JMSExpiration">
+                <xs:restriction base="xs:int"/>
+            </xs:simpleType>
+            <xs:simpleType name="Message">
+                <xs:restriction base="xs:string"/>
+            </xs:simpleType>
+            <xs:simpleType name="MessageCode">
+                <xs:restriction base="xs:string"/>
+            </xs:simpleType>
+            <xs:simpleType name="MessageParam">
+                <xs:restriction base="xs:string"/>
+            </xs:simpleType>
+            <xs:complexType name="MessageType">
+                <xs:sequence>
+                    <xs:element name="MessageCode" type="ns3:MessageCode"/>
+                    <xs:element name="Message" type="ns3:Message" minOccurs="0"/>
+                    <xs:element name="MessageParam" type="ns3:MessageParam" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:simpleType name="OperationID">
+                <xs:restriction base="xs:int"/>
+            </xs:simpleType>
+            <xs:complexType name="ProcessInfoType">
+                <xs:sequence>
+                    <xs:element name="ProcessPath" type="ns3:ProcessPath"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:simpleType name="ProcessInput">
+                <xs:restriction base="xs:string"/>
+            </xs:simpleType>
+            <xs:simpleType name="ProcessPath">
+                <xs:restriction base="xs:string"/>
+            </xs:simpleType>
+            <xs:simpleType name="ProjectName">
+                <xs:restriction base="xs:string"/>
+            </xs:simpleType>
+            <xs:complexType name="ResultStatusType">
+                <xs:sequence>
+                    <xs:element name="Status" type="ns3:Status"/>
+                    <xs:element name="Message" type="ns3:MessageType" minOccurs="0" maxOccurs="unbounded"/>
+                    <xs:element name="TechnicalInfo" type="ns3:TechnicalInfo" minOccurs="0"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="RuntimeFaultType">
+                <xs:annotation>
+                    <xs:documentation>Fault message type for runtime faults.</xs:documentation>
+                </xs:annotation>
+                <xs:complexContent>
+                    <xs:extension base="ns3:FaultType"/>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="SecurityFaultType">
+                <xs:annotation>
+                    <xs:documentation>Fault message type for invalid or missing security credentials. </xs:documentation>
+                </xs:annotation>
+                <xs:complexContent>
+                    <xs:extension base="ns3:FaultType"/>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:simpleType name="SequenceNum">
+                <xs:restriction base="xs:string"/>
+            </xs:simpleType>
+            <xs:simpleType name="ServiceID">
+                <xs:restriction base="xs:int"/>
+            </xs:simpleType>
+            <xs:simpleType name="SessionID">
+                <xs:restriction base="xs:string"/>
+            </xs:simpleType>
+            <xs:simpleType name="SourceSystem">
+                <xs:restriction base="xs:string"/>
+            </xs:simpleType>
+            <xs:simpleType name="Status">
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="OK"/>
+                    <xs:enumeration value="WARNING"/>
+                    <xs:enumeration value="ERROR"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="TargetSystem">
+                <xs:restriction base="xs:string"/>
+            </xs:simpleType>
+            <xs:simpleType name="TechnicalInfo">
+                <xs:restriction base="xs:string"/>
+            </xs:simpleType>
+            <xs:simpleType name="TimeOut">
+                <xs:restriction base="xs:int"/>
+            </xs:simpleType>
+            <xs:simpleType name="TransactionID">
+                <xs:restriction base="xs:string"/>
+            </xs:simpleType>
+            <xs:simpleType name="TransactionType">
+                <xs:restriction base="xs:string"/>
+            </xs:simpleType>
+            <xs:simpleType name="UserID">
+                <xs:restriction base="xs:string"/>
+            </xs:simpleType>
+            <xs:simpleType name="VersionID">
+                <xs:restriction base="xs:string"/>
+            </xs:simpleType>
+        </xs:schema>
+        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:local="http://mtel.bg/AmdocsBilling/SystemServices/GeneralQueriesServiceCommonTypes" xmlns:ns0="http://mtel.bg/Common/CommonTypes" xmlns:CommonTypes="http://mtel.bg/Common/AmdocsBilling/CommonTypes" targetNamespace="http://mtel.bg/AmdocsBilling/SystemServices/GeneralQueriesServiceCommonTypes" elementFormDefault="unqualified" attributeFormDefault="unqualified">
+            <xs:import namespace="http://mtel.bg/Common/CommonTypes"/>
+            <xs:import namespace="http://mtel.bg/Common/AmdocsBilling/CommonTypes"/>
+            <xs:simpleType name="ActivityCode">
+                <xs:restriction base="xs:string">
+                    <xs:length value="3"/>
+                    <xs:enumeration value="MSE "/>
+                    <xs:enumeration value="FRS"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:complexType name="BENInformation">
+                <xs:sequence>
+                    <xs:element name="BANID" type="CommonTypes:BANID" minOccurs="0"/>
+                    <xs:element name="BENID" type="CommonTypes:BENID" minOccurs="0"/>
+                    <xs:element name="BillingMedia" type="CommonTypes:BillingMedia" minOccurs="0"/>
+                    <xs:element name="PIN" type="CommonTypes:PIN" minOccurs="0"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ChangeSubscriberStatusRequestType">
+                <xs:sequence>
+                    <xs:element name="ActivityCode" type="local:ActivityCode"/>
+                    <xs:element name="BANID" type="CommonTypes:BANID" minOccurs="0"/>
+                    <xs:element name="MSISDN" type="CommonTypes:MSISDN"/>
+                    <xs:element name="Notes" type="xs:string" minOccurs="0"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:simpleType name="ChargeNetAmount">
+                <xs:restriction base="xs:decimal">
+                    <xs:totalDigits value="9"/>
+                    <xs:fractionDigits value="2"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:complexType name="CheckSameGroupMembershipRequestType">
+                <xs:sequence>
+                    <xs:element name="MSISDN1" type="CommonTypes:MSISDN"/>
+                    <xs:element name="MSISDN2" type="CommonTypes:MSISDN"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="CheckSameGroupMembershipResponseType">
+                <xs:sequence>
+                    <xs:element name="GroupMembershipDetailsList">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="GroupMembershipDetails" type="local:GroupMembershipDetailsType" minOccurs="0" maxOccurs="unbounded"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:simpleType name="CommitOriginalNumberMonths">
+                <xs:restriction base="xs:int">
+                    <xs:maxInclusive value="999"/>
+                    <xs:minInclusive value="0"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:complexType name="CreateCustomerDebitRequestType">
+                <xs:sequence>
+                    <xs:element name="MSISDN" type="CommonTypes:MSISDN"/>
+                    <xs:element name="FeatureCode" type="local:FeatureCode"/>
+                    <xs:element name="ChargeNetAmount" type="local:ChargeNetAmount"/>
+                    <xs:element name="UserName" type="local:UserName"/>
+                    <xs:element name="ShopID" type="local:ShopID"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="CustomerInvoiceDataType">
+                <xs:sequence>
+                    <xs:element name="Currency" type="CommonTypes:Currency" minOccurs="0"/>
+                    <xs:element name="InvoiceCreationDate" type="xs:date"/>
+                    <xs:element name="InvoiceDueDate" type="xs:date"/>
+                    <xs:element name="InvoiceIssueDate" type="xs:date" minOccurs="0"/>
+                    <xs:element name="InvoiceOriginalAmount" type="xs:double"/>
+                    <xs:element name="InvoicePaidAmount" type="xs:double"/>
+                    <xs:element name="InvoiceType" type="CommonTypes:InvoiceType"/>
+                    <xs:element name="InvoiceNumber" type="CommonTypes:InvoiceID"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:simpleType name="FeatureCode">
+                <xs:restriction base="xs:string"/>
+            </xs:simpleType>
+            <xs:complexType name="FilteredInfoListType">
+                <xs:sequence>
+                    <xs:element name="FilteredInfo" type="local:FilteredInfoType" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="FilteredInfoType">
+                <xs:sequence>
+                    <xs:element name="FilterName" type="xs:string"/>
+                    <xs:element name="FilterType" type="CommonTypes:FilterType"/>
+                    <xs:element name="FilterValue">
+                        <xs:complexType>
+                            <xs:choice>
+                                <xs:element name="FilterValueDate" type="xs:string"/>
+                                <xs:element name="FilterValueNumber" type="xs:double"/>
+                                <xs:element name="FilterValueString" type="xs:string"/>
+                            </xs:choice>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="GetBankDetailsByBARRequestType">
+                <xs:sequence>
+                    <xs:element name="BANID" type="CommonTypes:BANID" minOccurs="0"/>
+                    <xs:element name="BENID" type="CommonTypes:BENID" minOccurs="0"/>
+                    <xs:element name="IBAN" type="CommonTypes:IBAN"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="GetBankDetailsByBARResponseType">
+                <xs:sequence>
+                    <xs:element name="BankCode" minOccurs="0">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:maxLength value="8"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="BankcodeName" minOccurs="0">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:maxLength value="60"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="BranchCode" minOccurs="0">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:maxLength value="8"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="BranchCodename" minOccurs="0">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:maxLength value="60"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="GetBudgetControlDetailsRequestType">
+                <xs:sequence>
+                    <xs:element name="MSISDN" type="CommonTypes:MSISDN"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="GetBudgetControlDetailsResponseType">
+                <xs:sequence>
+                    <xs:element name="CreditLimit" type="xs:double"/>
+                    <xs:element name="DepositBalance" type="xs:double"/>
+                    <xs:element name="SubscriberStatus" type="CommonTypes:SubscriberStatus"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="GetCustomerDataBySubscriberRequestType">
+                <xs:sequence>
+                    <xs:element name="MSISDN" type="CommonTypes:MSISDN"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="GetCustomerDataBySubscriberResponseType">
+                <xs:sequence>
+                    <xs:element name="BillingCycle" type="CommonTypes:BillingCycle"/>
+                    <xs:element name="ContractNumber" type="CommonTypes:ContractNumber"/>
+                    <xs:element name="NameInfoList" type="local:NameInfoListType"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="GetCustomerOpenInvoiceListRequestType">
+                <xs:sequence>
+                    <xs:element name="BANID" type="CommonTypes:BANID"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="GetCustomerOpenInvoiceListResponseType">
+                <xs:sequence>
+                    <xs:element name="InvoiceList">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="InvoiceData" type="local:CustomerInvoiceDataType" minOccurs="0" maxOccurs="unbounded"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="GetCustomerVATRequestType">
+                <xs:sequence>
+                    <xs:element name="BANID" type="CommonTypes:BANID"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="GetCustomerVATResponseType">
+                <xs:sequence>
+                    <xs:element name="ShouldPayVAT" type="xs:boolean"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="GetCycleInfoRequestType">
+                <xs:sequence>
+                    <xs:element name="BillingCycleCode" type="CommonTypes:BillingCycle"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="GetCycleInfoResponseType">
+                <xs:sequence>
+                    <xs:element name="LastCycleEndDate" type="xs:date"/>
+                    <xs:element name="LastCycleStartDate" type="xs:date"/>
+                    <xs:element name="NextCycleEndDate" type="xs:date"/>
+                    <xs:element name="NextCycleStartDate" type="xs:date"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="GetGroupInfoRequestType">
+                <xs:sequence>
+                    <xs:element name="CugID">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:maxLength value="25"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="GetGroupInfoResponseType">
+                <xs:sequence>
+                    <xs:element name="CugDescription" minOccurs="0">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:maxLength value="60"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="CugEffectiveDate" type="xs:dateTime"/>
+                    <xs:element name="CugExpirationDate" type="xs:dateTime" minOccurs="0"/>
+                    <xs:element name="CugGroupId">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:maxLength value="25"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="CugName" minOccurs="0">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:maxLength value="30"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="CugType">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:maxLength value="5"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="GroupPriority">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:int">
+                                <xs:totalDigits value="9"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="PID" type="CommonTypes:PID" minOccurs="0"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="GetMSISDNByPIDContractRequestType">
+                <xs:sequence>
+                    <xs:element name="PID" type="CommonTypes:PID"/>
+                    <xs:element name="ContractID" type="CommonTypes:ContractNumber"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="GetMSISDNByPIDContractResponseType">
+                <xs:sequence>
+                    <xs:element name="MSISDNInfoList">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="MSISDNInfo" minOccurs="0" maxOccurs="unbounded">
+                                    <xs:complexType>
+                                        <xs:sequence>
+                                            <xs:element name="MSISDN" type="CommonTypes:MSISDN"/>
+                                            <xs:element name="Status" type="xs:string"/>
+                                        </xs:sequence>
+                                    </xs:complexType>
+                                </xs:element>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="GetMSISDNListByBANRequestType">
+                <xs:sequence>
+                    <xs:element name="BANIDList">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="BANID" type="CommonTypes:BANID" maxOccurs="unbounded"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="FilteredInfoList" type="local:FilteredInfoListType" minOccurs="0"/>
+                    <xs:element name="Paging" type="CommonTypes:PagingRequestType"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="GetMSISDNListByBANResponseType">
+                <xs:sequence>
+                    <xs:element name="PaginationInfo" type="CommonTypes:PagingResponseType"/>
+                    <xs:element name="CustomerSubscriberList">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="SubscriberMSISDNs" type="local:SubscriberMSISDNsType" maxOccurs="unbounded"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="GetPortOutMSISDNCheckRequestType">
+                <xs:sequence>
+                    <xs:element name="MSISDN" type="CommonTypes:MSISDN"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="GetPortOutMSISDNCheckResponseType">
+                <xs:sequence>
+                    <xs:element name="ActivationStatus" type="xs:boolean"/>
+                    <xs:element name="MSISDNType" type="CommonTypes:MSISDNType"/>
+                    <xs:element name="OpenInvoices" type="xs:boolean"/>
+                    <xs:element name="OpenLeasing" type="xs:boolean"/>
+                    <xs:element name="OpenLTA" type="xs:boolean"/>
+                    <xs:element name="SubscriberStatus" type="local:SubscriberStatus"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="GetSubscriberBENInfoRequestType">
+                <xs:sequence>
+                    <xs:element name="MSISDN" type="CommonTypes:MSISDN"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="GetSubscriberBENInfoResponseType">
+                <xs:sequence>
+                    <xs:element name="BENInformationList">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="BENInformation" type="local:BENInformation" minOccurs="0" maxOccurs="unbounded"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="GetSubscriberEntityIDsRequestType">
+                <xs:choice>
+                    <xs:element name="ExtProdID">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:maxLength value="10"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="MSISDN" type="CommonTypes:MSISDN"/>
+                    <xs:element name="SubscriberID">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:int">
+                                <xs:totalDigits value="9"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:element>
+                </xs:choice>
+            </xs:complexType>
+            <xs:complexType name="GetSubscriberEntityIDsResponseType">
+                <xs:sequence>
+                    <xs:element name="BANID" type="CommonTypes:BANID"/>
+                    <xs:element name="ExtProdID">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:maxLength value="10"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="SubscriberID">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:int">
+                                <xs:totalDigits value="9"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="SubscriberNo" type="CommonTypes:SubscriberNo"/>
+                    <xs:element name="PID" type="CommonTypes:PID"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="GetSubscriberInfoByBANRequestType">
+                <xs:sequence>
+                    <xs:element name="BANID" type="CommonTypes:BANID"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="GetSubscriberInfoByBANResponseType">
+                <xs:sequence>
+                    <xs:element name="SubscriberNameInfoList">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="SubscriberNameInfo" maxOccurs="unbounded">
+                                    <xs:complexType>
+                                        <xs:sequence>
+                                            <xs:element name="subscriberFirstName">
+                                                <xs:simpleType>
+                                                    <xs:restriction base="xs:string">
+                                                        <xs:maxLength value="32"/>
+                                                    </xs:restriction>
+                                                </xs:simpleType>
+                                            </xs:element>
+                                            <xs:element name="subscriberLastName">
+                                                <xs:simpleType>
+                                                    <xs:restriction base="xs:string">
+                                                        <xs:maxLength value="60"/>
+                                                    </xs:restriction>
+                                                </xs:simpleType>
+                                            </xs:element>
+                                            <xs:element name="subscriberNo">
+                                                <xs:simpleType>
+                                                    <xs:restriction base="xs:string">
+                                                        <xs:maxLength value="25"/>
+                                                    </xs:restriction>
+                                                </xs:simpleType>
+                                            </xs:element>
+                                        </xs:sequence>
+                                    </xs:complexType>
+                                </xs:element>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="GetSubscriberInfoRequestType">
+                <xs:sequence>
+                    <xs:element name="SubscriberNo" type="CommonTypes:SubscriberNo"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="GetSubscriberInfoResponseType">
+                <xs:sequence>
+                    <xs:element name="ActivationDate" type="xs:date"/>
+                    <xs:element name="BENID" type="CommonTypes:BENID"/>
+                    <xs:element name="CreditControlReasonCode">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:maxLength value="5"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="BANID" type="CommonTypes:BANID"/>
+                    <xs:element name="ExtProdId">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:maxLength value="10"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="SubscriberStatus" type="CommonTypes:SubscriberStatus"/>
+                    <xs:element name="SubscriberStatusReasonCode">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:maxLength value="5"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="SubscriberId">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:int">
+                                <xs:totalDigits value="9"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="GetSubscriberLTAInfoRequestType">
+                <xs:sequence>
+                    <xs:element name="MSISDN" type="CommonTypes:MSISDN"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="GetSubscriberLTAInfoResponseType">
+                <xs:sequence>
+                    <xs:element name="LTAList" minOccurs="0">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="LTA" type="local:LTAType" minOccurs="0" maxOccurs="unbounded"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="GetSubscriberOpenInvoiceListRequestType">
+                <xs:sequence>
+                    <xs:element name="MSISDN" type="CommonTypes:MSISDN"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="GetSubscriberOpenInvoiceListResponseType">
+                <xs:sequence>
+                    <xs:element name="InvoiceList">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="InvoiceData" type="local:SubscriberInvoiceDataType" minOccurs="0" maxOccurs="unbounded"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="GroupMembershipDetailsType">
+                <xs:sequence>
+                    <xs:element name="CugGroupId" type="xs:string"/>
+                    <xs:element name="CugGroupPriority" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="LTAType">
+                <xs:sequence>
+                    <xs:element name="CommitEndDate" type="xs:date" minOccurs="0"/>
+                    <xs:element name="CommitOriginalNumberMonths" type="local:CommitOriginalNumberMonths" minOccurs="0"/>
+                    <xs:element name="CommitRefuseRenewalDate" type="xs:date" minOccurs="0"/>
+                    <xs:element name="CommitStartDate" type="xs:date" minOccurs="0"/>
+                    <xs:element name="DLServiceCode" type="xs:string" minOccurs="0"/>
+                    <xs:element name="OfferInstance" type="local:OfferInstance" minOccurs="0"/>
+                    <xs:element name="ProlongationPeriod" type="local:ProlongationPeriod" minOccurs="0"/>
+                    <xs:element name="RetentionCode" type="CommonTypes:RetentionCode" minOccurs="0"/>
+                    <xs:element name="ServiceType" type="xs:string" minOccurs="0"/>
+                    <xs:element name="SocCode" type="CommonTypes:SocCode" minOccurs="0"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ListAllCUGsOfMSISDNRequestType">
+                <xs:sequence>
+                    <xs:element name="MSISDN" type="CommonTypes:MSISDN"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ListAllCUGsOfMSISDNResponseType">
+                <xs:sequence>
+                    <xs:element name="BANID" type="CommonTypes:BANID"/>
+                    <xs:element name="CugInfoList">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="CugInfo" maxOccurs="unbounded">
+                                    <xs:complexType>
+                                        <xs:sequence>
+                                            <xs:element name="CugID">
+                                                <xs:simpleType>
+                                                    <xs:restriction base="xs:string">
+                                                        <xs:maxLength value="25"/>
+                                                    </xs:restriction>
+                                                </xs:simpleType>
+                                            </xs:element>
+                                            <xs:element name="CugRestriction" minOccurs="0">
+                                                <xs:simpleType>
+                                                    <xs:restriction base="xs:string">
+                                                        <xs:maxLength value="2000"/>
+                                                    </xs:restriction>
+                                                </xs:simpleType>
+                                            </xs:element>
+                                        </xs:sequence>
+                                    </xs:complexType>
+                                </xs:element>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="MSISDNResourceLevelType">
+                <xs:sequence>
+                    <xs:element name="MSISDN" type="CommonTypes:MSISDN"/>
+                    <xs:element name="ResourceLevel" type="CommonTypes:ResourceLevel"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="MapCustomerVATType">
+                <xs:sequence>
+                    <xs:element name="Source" type="xs:string"/>
+                    <xs:element name="Target" type="xs:boolean" minOccurs="0"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="MapDateYYYYMMDDType">
+                <xs:sequence>
+                    <xs:element name="Source" type="xs:string"/>
+                    <xs:element name="Target" type="xs:date" minOccurs="0"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="MapMSISDNType">
+                <xs:sequence>
+                    <xs:element name="Source" type="xs:byte"/>
+                    <xs:element name="Target" type="CommonTypes:MSISDNType" minOccurs="0"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="MapResourceLevel">
+                <xs:sequence>
+                    <xs:element name="Source" type="xs:byte"/>
+                    <xs:element name="Target" type="CommonTypes:ResourceLevel" minOccurs="0"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="MapSubscriberStatusType">
+                <xs:sequence>
+                    <xs:element name="Source" type="xs:byte"/>
+                    <xs:element name="Target" type="CommonTypes:SubscriberStatus" minOccurs="0"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="MapperElementType">
+                <xs:choice>
+                    <xs:element name="CustomerVAT" type="local:MapCustomerVATType"/>
+                    <xs:element name="DateYYYYMMDD" type="local:MapDateYYYYMMDDType"/>
+                    <xs:element name="Default" type="ns0:AnyType"/>
+                    <xs:element name="MSISDNType" type="local:MapMSISDNType"/>
+                    <xs:element name="ResourceLevel" type="local:MapResourceLevel"/>
+                    <xs:element name="SubscriberStatus" type="local:MapSubscriberStatusType"/>
+                </xs:choice>
+            </xs:complexType>
+            <xs:complexType name="MapperRequestResponseType">
+                <xs:sequence>
+                    <xs:element name="MapperElement" type="local:MapperElementType" maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="NameInfoListType">
+                <xs:sequence>
+                    <xs:element name="NameInfo" maxOccurs="unbounded">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="FirstName">
+                                    <xs:simpleType>
+                                        <xs:restriction base="xs:string">
+                                            <xs:maxLength value="32"/>
+                                        </xs:restriction>
+                                    </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="MiddleInitial" minOccurs="0">
+                                    <xs:simpleType>
+                                        <xs:restriction base="xs:string">
+                                            <xs:maxLength value="60"/>
+                                        </xs:restriction>
+                                    </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="LastBusinessName">
+                                    <xs:simpleType>
+                                        <xs:restriction base="xs:string">
+                                            <xs:maxLength value="60"/>
+                                        </xs:restriction>
+                                    </xs:simpleType>
+                                </xs:element>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:simpleType name="OfferInstance">
+                <xs:annotation>
+                    <xs:documentation>PIN [0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9] - 010343678</xs:documentation>
+                </xs:annotation>
+                <xs:restriction base="xs:string">
+                    <xs:pattern value="[0-9]{1,9}"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="ProlongationPeriod">
+                <xs:restriction base="xs:int">
+                    <xs:maxInclusive value="999"/>
+                    <xs:minInclusive value="0"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="ShopID">
+                <xs:restriction base="xs:int">
+                    <xs:totalDigits value="5"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:complexType name="SubscriberInvoiceDataType">
+                <xs:sequence>
+                    <xs:element name="Currency" type="CommonTypes:Currency" minOccurs="0"/>
+                    <xs:element name="InvoiceCreationDate" type="xs:date"/>
+                    <xs:element name="InvoiceDueDate" type="xs:date"/>
+                    <xs:element name="InvoiceIssueDate" type="xs:date" minOccurs="0"/>
+                    <xs:element name="SubscriberBalance" type="xs:double"/>
+                    <xs:element name="SubscriberBalancePaid" type="xs:double"/>
+                    <xs:element name="InvoiceType" type="CommonTypes:InvoiceType"/>
+                    <xs:element name="InvoiceID" type="CommonTypes:InvoiceID"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="SubscriberMSISDNsType">
+                <xs:sequence>
+                    <xs:element name="BANID" type="CommonTypes:BANID"/>
+                    <xs:element name="MSISDNList">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="MSISDNResourceLevel" type="local:MSISDNResourceLevelType" maxOccurs="unbounded"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="SubscriberNo" type="CommonTypes:SubscriberNo"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:simpleType name="SubscriberStatus">
+                <xs:annotation>
+                    <xs:documentation>
+				A - ACTIVE, 
+				C - CANCELLED,
+				S - SUSPENDED</xs:documentation>
+                </xs:annotation>
+                <xs:restriction base="xs:string">
+                    <xs:length value="1"/>
+                    <xs:enumeration value="A"/>
+                    <xs:enumeration value="C"/>
+                    <xs:enumeration value="S"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:complexType name="UpdateBENInfoRequestType">
+                <xs:sequence>
+                    <xs:element name="BANID" type="CommonTypes:BANID"/>
+                    <xs:element name="BENID" type="CommonTypes:BENID"/>
+                    <xs:element name="BillingMedia" type="CommonTypes:BillingMedia"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:simpleType name="UserName">
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="30"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:element name="LTA" type="local:LTAType"/>
+            <xs:element name="MSISDNResourceLevel" type="local:MSISDNResourceLevelType"/>
+            <xs:element name="MapperElement" type="local:MapperElementType"/>
+            <xs:element name="MapperRequestResponse" type="local:MapperRequestResponseType"/>
+            <xs:element name="SubscriberMSISDNs" type="local:SubscriberMSISDNsType"/>
+        </xs:schema>
+        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://mtel.bg/Common/CommonElements" xmlns:ct="http://mtel.bg/Common/CommonTypes" targetNamespace="http://mtel.bg/Common/CommonElements" version="1.0.0" elementFormDefault="unqualified" attributeFormDefault="unqualified">
+            <xs:import namespace="http://mtel.bg/Common/CommonTypes"/>
+            <xs:annotation>
+                <xs:documentation/>
+            </xs:annotation>
+            <xs:element name="DataNotFoundFault" type="ct:DataNotFoundFaultType"/>
+            <xs:element name="ErrorResponse" type="ct:ErrorResponseType"/>
+            <xs:element name="IllegalAPIUsageFault" type="ct:IllegalAPIUsageFaultType"/>
+            <xs:element name="IntegrationFault" type="ct:IntegrationFaultType"/>
+            <xs:element name="RuntimeFault" type="ct:RuntimeFaultType"/>
+            <xs:element name="SecurityFault" type="ct:SecurityFaultType"/>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:service name="GeneralQueriesService">
+        <wsdl:port name="PortTypeHTTPEndpoint" binding="tns:PortTypeHTTPEndpointBinding">
+            <soap:address location="http://kofa:11142/com_mtel_amdocs_billing_system_services_gq/Processes/Services/GeneralQueriesService/Interface/GeneralQueriesService.serviceagent/PortTypeEndpoint1"/>
+        </wsdl:port>
+        <wsdl:port name="PortTypeJMSEndpoint" binding="tns:PortTypeJMSEndpointBinding">
+            <soap:address location=""/>
+            <jms:connectionFactory>FTQueueConnectionFactory</jms:connectionFactory>
+            <jms:targetAddress destination="queue">MTEL.AmdocsBillingSystemServices.TST2.GeneralQueriesService</jms:targetAddress>
+        </wsdl:port>
+    </wsdl:service>
+    <wsdl:portType name="PortType">
+        <wsdl:operation name="GetBudgetControlDetails">
+            <wsdl:input message="tns:GetBudgetControlDetailsRequest"/>
+            <wsdl:output message="tns:GetBudgetControlDetailsResponse"/>
+            <wsdl:fault name="fault" message="tns:RuntimeFault"/>
+            <wsdl:fault name="fault1" message="tns:DataNotFoundFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetMSISDNListByBAN">
+            <wsdl:input message="tns:GetMSISDNListByBANRequest"/>
+            <wsdl:output message="tns:GetMSISDNListByBANResponse"/>
+            <wsdl:fault name="fault" message="tns:RuntimeFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="ChangeSubscriberStatus">
+            <wsdl:input message="tns:ChangeSubscriberStatusRequest"/>
+            <wsdl:output message="tns:ChangeSubscriberStatusResponse"/>
+            <wsdl:fault name="fault" message="tns:RuntimeFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="CheckSameGroupMembership">
+            <wsdl:input message="tns:CheckSameGroupMembershipRequest"/>
+            <wsdl:output message="tns:CheckSameGroupMembershipResponse"/>
+            <wsdl:fault name="fault" message="tns:RuntimeFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetCustomerOpenInvoiceList">
+            <wsdl:input message="tns:GetCustomerOpenInvoiceListRequest"/>
+            <wsdl:output message="tns:GetCustomerOpenInvoiceListResponse"/>
+            <wsdl:fault name="fault" message="tns:RuntimeFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetSubscriberOpenInvoiceList">
+            <wsdl:input message="tns:GetSubscriberOpenInvoiceListRequest"/>
+            <wsdl:output message="tns:GetSubscriberOpenInvoiceListResponse"/>
+            <wsdl:fault name="fault" message="tns:RuntimeFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetSubscriberInfo">
+            <wsdl:input message="tns:GetSubscriberInfoRequest"/>
+            <wsdl:output message="tns:GetSubscriberInfoResponse"/>
+            <wsdl:fault name="fault" message="tns:RuntimeFault"/>
+            <wsdl:fault name="DataNotFound" message="tns:DataNotFoundFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetSubscriberEntityIDs">
+            <wsdl:input message="tns:GetSubscriberEntityIDsRequest"/>
+            <wsdl:output message="tns:GetSubscriberEntityIDsResponse"/>
+            <wsdl:fault name="fault" message="tns:RuntimeFault"/>
+            <wsdl:fault name="fault1" message="tns:DataNotFoundFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="UpdateBENInfo">
+            <wsdl:input message="tns:UpdateBENInfoRequest"/>
+            <wsdl:output message="tns:UpdateBENInfoResponse"/>
+            <wsdl:fault name="fault" message="tns:RuntimeFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetPortOutMSISDNCheck">
+            <wsdl:input message="tns:GetPortOutMSISDNCheckRequest"/>
+            <wsdl:output message="tns:GetPortOutMSISDNCheckResponse"/>
+            <wsdl:fault name="fault" message="tns:RuntimeFault"/>
+            <wsdl:fault name="fault1" message="tns:DataNotFoundFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetSubscriberBENInfo">
+            <wsdl:input message="tns:GetSubscriberBENInfoRequest"/>
+            <wsdl:output message="tns:GetSubscriberBENInfoResponse"/>
+            <wsdl:fault name="fault" message="tns:RuntimeFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetBankDetailsByBAR">
+            <wsdl:input message="tns:GetBankDetailsByBARRequest"/>
+            <wsdl:output message="tns:GetBankDetailsByBARResponse"/>
+            <wsdl:fault name="fault" message="tns:RuntimeFault"/>
+            <wsdl:fault name="fault1" message="tns:DataNotFoundFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetSubscriberLTAInfo">
+            <wsdl:input message="tns:GetSubscriberLTAInfoRequest"/>
+            <wsdl:output message="tns:GetSubscriberLTAInfoResponse"/>
+            <wsdl:fault name="fault" message="tns:RuntimeFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetGroupInfo">
+            <wsdl:input message="tns:GetGroupInfoRequest"/>
+            <wsdl:output message="tns:GetGroupInfoResponse"/>
+            <wsdl:fault name="fault1" message="tns:RuntimeFault"/>
+            <wsdl:fault name="fault2" message="tns:DataNotFoundFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="ListAllCUGsOfMSISDN">
+            <wsdl:input message="tns:ListAllCUGsOfMSISDNRequest"/>
+            <wsdl:output message="tns:ListAllCUGsOfMSISDNResponse"/>
+            <wsdl:fault name="fault" message="tns:RuntimeFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="CreateCustomerDebit">
+            <wsdl:input message="tns:CreateCustomerDebitRequest"/>
+            <wsdl:output message="tns:CreateCustomerDebitResponse"/>
+            <wsdl:fault name="fault1" message="tns:RuntimeFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetMSISDNByPIDContract">
+            <wsdl:input message="tns:GetMSISDNByPIDContractRequest"/>
+            <wsdl:output message="tns:GetMSISDNByPIDContractResponse"/>
+            <wsdl:fault name="fault" message="tns:RuntimeFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetSubscriberInfoByBAN">
+            <wsdl:input message="tns:GetSubscriberInfoByBANRequest"/>
+            <wsdl:output message="tns:GetSubscriberInfoByBANResponse"/>
+            <wsdl:fault name="fault" message="tns:RuntimeFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetCustomerDataBySubscriber">
+            <wsdl:input message="tns:GetCustomerDataBySubscriberRequest"/>
+            <wsdl:output message="tns:GetCustomerDataBySubscriberResponse"/>
+            <wsdl:fault name="fault" message="tns:RuntimeFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetCycleInfo">
+            <wsdl:input message="tns:GetCycleInfoRequest"/>
+            <wsdl:output message="tns:GetCycleInfoResponse"/>
+            <wsdl:fault name="fault" message="tns:RuntimeFault"/>
+            <wsdl:fault name="fault1" message="tns:DataNotFoundFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetCustomerVAT">
+            <wsdl:input message="tns:GetCustomerVATRequest"/>
+            <wsdl:output message="tns:GetCustomerVATResponse"/>
+            <wsdl:fault name="fault" message="tns:RuntimeFault"/>
+            <wsdl:fault name="fault1" message="tns:DataNotFoundFault"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="PortTypeHTTPEndpointBinding" type="tns:PortType">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="GetBudgetControlDetails">
+            <soap:operation style="document" soapAction="/com_mtel_amdocs_billing_system_services_gq/Processes/Services/GeneralQueriesService/Interface/GeneralQueriesService.serviceagent/PortTypeEndpoint1/GetBudgetControlDetails"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="GetBudgetControlDetailsRequest"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="GetBudgetControlDetailsResponse"/>
+            </wsdl:output>
+            <wsdl:fault name="fault">
+                <soap:fault use="literal" name="fault"/>
+            </wsdl:fault>
+            <wsdl:fault name="fault1">
+                <soap:fault use="literal" name="fault1"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="GetMSISDNListByBAN">
+            <soap:operation style="document" soapAction="/com_mtel_amdocs_billing_system_services_gq/Processes/Services/GeneralQueriesService/Interface/GeneralQueriesService.serviceagent/PortTypeEndpoint1/GetMSISDNListByBAN"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="GetMSISDNListByBANRequest"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="GetMSISDNListByBANResponse"/>
+            </wsdl:output>
+            <wsdl:fault name="fault">
+                <soap:fault use="literal" name="fault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="ChangeSubscriberStatus">
+            <soap:operation style="document" soapAction="/com_mtel_amdocs_billing_system_services_gq/Processes/Services/GeneralQueriesService/Interface/GeneralQueriesService.serviceagent/PortTypeEndpoint1/ChangeSubscriberStatus"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="ChangeSubscriberStatusRequest"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="ChangeSubscriberStatusResponse"/>
+            </wsdl:output>
+            <wsdl:fault name="fault">
+                <soap:fault use="literal" name="fault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="CheckSameGroupMembership">
+            <soap:operation style="document" soapAction="/com_mtel_amdocs_billing_system_services_gq/Processes/Services/GeneralQueriesService/Interface/GeneralQueriesService.serviceagent/PortTypeEndpoint1/CheckSameGroupMembership"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="CheckSameGroupMembershipRequest"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="CheckSameGroupMembershipResponse"/>
+            </wsdl:output>
+            <wsdl:fault name="fault">
+                <soap:fault use="literal" name="fault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="GetCustomerOpenInvoiceList">
+            <soap:operation style="document" soapAction="/com_mtel_amdocs_billing_system_services_gq/Processes/Services/GeneralQueriesService/Interface/GeneralQueriesService.serviceagent/PortTypeEndpoint1/GetCustomerOpenInvoiceList"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="GetCustomerOpenInvoiceListRequest"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="GetCustomerOpenInvoiceListResponse"/>
+            </wsdl:output>
+            <wsdl:fault name="fault">
+                <soap:fault use="literal" name="fault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="GetSubscriberOpenInvoiceList">
+            <soap:operation style="document" soapAction="/com_mtel_amdocs_billing_system_services_gq/Processes/Services/GeneralQueriesService/Interface/GeneralQueriesService.serviceagent/PortTypeEndpoint1/GetSubscriberOpenInvoiceList"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="GetSubscriberOpenInvoiceListRequest"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="GetSubscriberOpenInvoiceListResponse"/>
+            </wsdl:output>
+            <wsdl:fault name="fault">
+                <soap:fault use="literal" name="fault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="GetSubscriberInfo">
+            <soap:operation style="document" soapAction="/com_mtel_amdocs_billing_system_services_gq/Processes/Services/GeneralQueriesService/Interface/GeneralQueriesService.serviceagent/PortTypeEndpoint1/GetSubscriberInfo"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="GetSubscriberInfoRequest"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="GetSubscriberInfoResponse"/>
+            </wsdl:output>
+            <wsdl:fault name="fault">
+                <soap:fault use="literal" name="fault"/>
+            </wsdl:fault>
+            <wsdl:fault name="DataNotFound">
+                <soap:fault use="literal" name="DataNotFound"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="GetSubscriberEntityIDs">
+            <soap:operation style="document" soapAction="/com_mtel_amdocs_billing_system_services_gq/Processes/Services/GeneralQueriesService/Interface/GeneralQueriesService.serviceagent/PortTypeEndpoint1/GetSubscriberEntityIDs"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="GetSubscriberEntityIDsRequest"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="GetSubscriberEntityIDsResponse"/>
+            </wsdl:output>
+            <wsdl:fault name="fault">
+                <soap:fault use="literal" name="fault"/>
+            </wsdl:fault>
+            <wsdl:fault name="fault1">
+                <soap:fault use="literal" name="fault1"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="UpdateBENInfo">
+            <soap:operation style="document" soapAction="/com_mtel_amdocs_billing_system_services_gq/Processes/Services/GeneralQueriesService/Interface/GeneralQueriesService.serviceagent/PortTypeEndpoint1/UpdateBENInfo"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="UpdateBENInfoRequest"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="UpdateBENInfoResponse"/>
+            </wsdl:output>
+            <wsdl:fault name="fault">
+                <soap:fault use="literal" name="fault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="GetPortOutMSISDNCheck">
+            <soap:operation style="document" soapAction="/com_mtel_amdocs_billing_system_services_gq/Processes/Services/GeneralQueriesService/Interface/GeneralQueriesService.serviceagent/PortTypeEndpoint1/GetPortOutMSISDNCheck"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="GetPortOutMSISDNCheckRequest"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="GetPortOutMSISDNCheckResponse"/>
+            </wsdl:output>
+            <wsdl:fault name="fault">
+                <soap:fault use="literal" name="fault"/>
+            </wsdl:fault>
+            <wsdl:fault name="fault1">
+                <soap:fault use="literal" name="fault1"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="GetSubscriberBENInfo">
+            <soap:operation style="document" soapAction="/com_mtel_amdocs_billing_system_services_gq/Processes/Services/GeneralQueriesService/Interface/GeneralQueriesService.serviceagent/PortTypeEndpoint1/GetSubscriberBENInfo"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="GetSubscriberBENInfoRequest"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="GetSubscriberBENInfoResponse"/>
+            </wsdl:output>
+            <wsdl:fault name="fault">
+                <soap:fault use="literal" name="fault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="GetBankDetailsByBAR">
+            <soap:operation style="document" soapAction="/com_mtel_amdocs_billing_system_services_gq/Processes/Services/GeneralQueriesService/Interface/GeneralQueriesService.serviceagent/PortTypeEndpoint1/GetBankDetailsByBAR"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="GetBankDetailsByBARRequest"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="GetBankDetailsByBARResponse"/>
+            </wsdl:output>
+            <wsdl:fault name="fault">
+                <soap:fault use="literal" name="fault"/>
+            </wsdl:fault>
+            <wsdl:fault name="fault1">
+                <soap:fault use="literal" name="fault1"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="GetSubscriberLTAInfo">
+            <soap:operation style="document" soapAction="/com_mtel_amdocs_billing_system_services_gq/Processes/Services/GeneralQueriesService/Interface/GeneralQueriesService.serviceagent/PortTypeEndpoint1/GetSubscriberLTAInfo"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="GetSubscriberLTAInfoRequest"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="GetSubscriberLTAInfoResponse"/>
+            </wsdl:output>
+            <wsdl:fault name="fault">
+                <soap:fault use="literal" name="fault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="GetGroupInfo">
+            <soap:operation style="document" soapAction="/com_mtel_amdocs_billing_system_services_gq/Processes/Services/GeneralQueriesService/Interface/GeneralQueriesService.serviceagent//GetGroupInfo"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="GetGroupInfoRequest"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="GetGroupInfoResponse"/>
+            </wsdl:output>
+            <wsdl:fault name="fault1">
+                <soap:fault use="literal" name="fault1"/>
+            </wsdl:fault>
+            <wsdl:fault name="fault2">
+                <soap:fault use="literal" name="fault2"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="ListAllCUGsOfMSISDN">
+            <soap:operation style="document" soapAction="/com_mtel_amdocs_billing_system_services_gq/Processes/Services/GeneralQueriesService/Interface/GeneralQueriesService.serviceagent/PortTypeEndpoint1/ListAllCUGsOfMSISDN"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="ListAllCUGsOfMSISDNRequest"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="ListAllCUGsOfMSISDNResponse"/>
+            </wsdl:output>
+            <wsdl:fault name="fault">
+                <soap:fault use="literal" name="fault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="CreateCustomerDebit">
+            <soap:operation style="document" soapAction="/com_mtel_amdocs_billing_system_services_gq/Processes/Services/GeneralQueriesService/Interface/GeneralQueriesService.serviceagent//CreateCustomerDebit"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="CreateCustomerDebitRequest"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="CreateCustomerDebitResponse"/>
+            </wsdl:output>
+            <wsdl:fault name="fault1">
+                <soap:fault use="literal" name="fault1"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="GetMSISDNByPIDContract">
+            <soap:operation style="document" soapAction="/com_mtel_amdocs_billing_system_services_gq/Processes/Services/GeneralQueriesService/Interface/GeneralQueriesService.serviceagent/PortTypeEndpoint1/GetMSISDNByPIDContract"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="GetMSISDNByPIDContractRequest"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="GetMSISDNByPIDContractResponse"/>
+            </wsdl:output>
+            <wsdl:fault name="fault">
+                <soap:fault use="literal" name="fault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="GetSubscriberInfoByBAN">
+            <soap:operation style="document" soapAction="/com_mtel_amdocs_billing_system_services_gq/Processes/Services/GeneralQueriesService/Interface/GeneralQueriesService.serviceagent/PortTypeEndpoint1/GetSubscriberInfoByBAN"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="GetSubscriberInfoByBANRequest"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="GetSubscriberInfoByBANResponse"/>
+            </wsdl:output>
+            <wsdl:fault name="fault">
+                <soap:fault use="literal" name="fault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="GetCustomerDataBySubscriber">
+            <soap:operation style="document" soapAction="/com_mtel_amdocs_billing_system_services_gq/Processes/Services/GeneralQueriesService/Interface/GeneralQueriesService.serviceagent/PortTypeEndpoint1/GetCustomerDataBySubscriber"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="GetCustomerDataBySubscriberRequest"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="GetCustomerDataBySubscriberResponse"/>
+            </wsdl:output>
+            <wsdl:fault name="fault">
+                <soap:fault use="literal" name="fault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="GetCycleInfo">
+            <soap:operation style="document" soapAction="/com_mtel_amdocs_billing_system_services_gq/Processes/Services/GeneralQueriesService/Interface/GeneralQueriesService.serviceagent/PortTypeEndpoint1/GetCycleInfo"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="GetCycleInfoRequest"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="GetCycleInfoResponse"/>
+            </wsdl:output>
+            <wsdl:fault name="fault">
+                <soap:fault use="literal" name="fault"/>
+            </wsdl:fault>
+            <wsdl:fault name="fault1">
+                <soap:fault use="literal" name="fault1"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="GetCustomerVAT">
+            <soap:operation style="document" soapAction="/com_mtel_amdocs_billing_system_services_gq/Processes/Services/GeneralQueriesService/Interface/GeneralQueriesService.serviceagent/PortTypeEndpoint1/GetCustomerVAT"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="GetCustomerVATRequest"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="GetCustomerVATResponse"/>
+            </wsdl:output>
+            <wsdl:fault name="fault">
+                <soap:fault use="literal" name="fault"/>
+            </wsdl:fault>
+            <wsdl:fault name="fault1">
+                <soap:fault use="literal" name="fault1"/>
+            </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="PortTypeJMSEndpointBinding" type="tns:PortType">
+        <soap:binding style="document" transport="http://www.tibco.com/namespaces/ws/2004/soap/binding/JMS"/>
+        <jms:binding messageFormat="Text"/>
+        <wsdl:operation name="GetBudgetControlDetails">
+            <soap:operation style="document" soapAction="/com_mtel_amdocs_billing_system_services_gq/Processes/Services/GeneralQueriesService/Interface/GeneralQueriesService.serviceagent/PortTypeEndpoint2/GetBudgetControlDetails"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="GetBudgetControlDetailsRequest"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="GetBudgetControlDetailsResponse"/>
+            </wsdl:output>
+            <wsdl:fault name="fault">
+                <soap:fault use="literal" name="fault"/>
+            </wsdl:fault>
+            <wsdl:fault name="fault1">
+                <soap:fault use="literal" name="fault1"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="GetMSISDNListByBAN">
+            <soap:operation style="document" soapAction="/com_mtel_amdocs_billing_system_services_gq/Processes/Services/GeneralQueriesService/Interface/GeneralQueriesService.serviceagent/PortTypeEndpoint2/GetMSISDNListByBAN"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="GetMSISDNListByBANRequest"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="GetMSISDNListByBANResponse"/>
+            </wsdl:output>
+            <wsdl:fault name="fault">
+                <soap:fault use="literal" name="fault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="ChangeSubscriberStatus">
+            <soap:operation style="document" soapAction="/com_mtel_amdocs_billing_system_services_gq/Processes/Services/GeneralQueriesService/Interface/GeneralQueriesService.serviceagent/PortTypeEndpoint2/ChangeSubscriberStatus"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="ChangeSubscriberStatusRequest"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="ChangeSubscriberStatusResponse"/>
+            </wsdl:output>
+            <wsdl:fault name="fault">
+                <soap:fault use="literal" name="fault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="CheckSameGroupMembership">
+            <soap:operation style="document" soapAction="/com_mtel_amdocs_billing_system_services_gq/Processes/Services/GeneralQueriesService/Interface/GeneralQueriesService.serviceagent/PortTypeEndpoint2/CheckSameGroupMembership"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="CheckSameGroupMembershipRequest"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="CheckSameGroupMembershipResponse"/>
+            </wsdl:output>
+            <wsdl:fault name="fault">
+                <soap:fault use="literal" name="fault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="GetCustomerOpenInvoiceList">
+            <soap:operation style="document" soapAction="/com_mtel_amdocs_billing_system_services_gq/Processes/Services/GeneralQueriesService/Interface/GeneralQueriesService.serviceagent/PortTypeEndpoint2/GetCustomerOpenInvoiceList"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="GetCustomerOpenInvoiceListRequest"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="GetCustomerOpenInvoiceListResponse"/>
+            </wsdl:output>
+            <wsdl:fault name="fault">
+                <soap:fault use="literal" name="fault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="GetSubscriberOpenInvoiceList">
+            <soap:operation style="document" soapAction="/com_mtel_amdocs_billing_system_services_gq/Processes/Services/GeneralQueriesService/Interface/GeneralQueriesService.serviceagent/PortTypeEndpoint2/GetSubscriberOpenInvoiceList"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="GetSubscriberOpenInvoiceListRequest"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="GetSubscriberOpenInvoiceListResponse"/>
+            </wsdl:output>
+            <wsdl:fault name="fault">
+                <soap:fault use="literal" name="fault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="GetSubscriberInfo">
+            <soap:operation style="document" soapAction="/com_mtel_amdocs_billing_system_services_gq/Processes/Services/GeneralQueriesService/Interface/GeneralQueriesService.serviceagent/PortTypeEndpoint2/GetSubscriberInfo"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="GetSubscriberInfoRequest"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="GetSubscriberInfoResponse"/>
+            </wsdl:output>
+            <wsdl:fault name="fault">
+                <soap:fault use="literal" name="fault"/>
+            </wsdl:fault>
+            <wsdl:fault name="DataNotFound">
+                <soap:fault use="literal" name="DataNotFound"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="GetSubscriberEntityIDs">
+            <soap:operation style="document" soapAction="/com_mtel_amdocs_billing_system_services_gq/Processes/Services/GeneralQueriesService/Interface/GeneralQueriesService.serviceagent/PortTypeEndpoint2/GetSubscriberEntityIDs"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="GetSubscriberEntityIDsRequest"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="GetSubscriberEntityIDsResponse"/>
+            </wsdl:output>
+            <wsdl:fault name="fault">
+                <soap:fault use="literal" name="fault"/>
+            </wsdl:fault>
+            <wsdl:fault name="fault1">
+                <soap:fault use="literal" name="fault1"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="UpdateBENInfo">
+            <soap:operation style="document" soapAction="/com_mtel_amdocs_billing_system_services_gq/Processes/Services/GeneralQueriesService/Interface/GeneralQueriesService.serviceagent/PortTypeEndpoint2/UpdateBENInfo"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="UpdateBENInfoRequest"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="UpdateBENInfoResponse"/>
+            </wsdl:output>
+            <wsdl:fault name="fault">
+                <soap:fault use="literal" name="fault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="GetPortOutMSISDNCheck">
+            <soap:operation style="document" soapAction="/com_mtel_amdocs_billing_system_services_gq/Processes/Services/GeneralQueriesService/Interface/GeneralQueriesService.serviceagent/PortTypeEndpoint2/GetPortOutMSISDNCheck"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="GetPortOutMSISDNCheckRequest"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="GetPortOutMSISDNCheckResponse"/>
+            </wsdl:output>
+            <wsdl:fault name="fault">
+                <soap:fault use="literal" name="fault"/>
+            </wsdl:fault>
+            <wsdl:fault name="fault1">
+                <soap:fault use="literal" name="fault1"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="GetSubscriberBENInfo">
+            <soap:operation style="document" soapAction="/com_mtel_amdocs_billing_system_services_gq/Processes/Services/GeneralQueriesService/Interface/GeneralQueriesService.serviceagent/PortTypeEndpoint2/GetSubscriberBENInfo"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="GetSubscriberBENInfoRequest"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="GetSubscriberBENInfoResponse"/>
+            </wsdl:output>
+            <wsdl:fault name="fault">
+                <soap:fault use="literal" name="fault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="GetBankDetailsByBAR">
+            <soap:operation style="document" soapAction="/com_mtel_amdocs_billing_system_services_gq/Processes/Services/GeneralQueriesService/Interface/GeneralQueriesService.serviceagent/PortTypeEndpoint2/GetBankDetailsByBAR"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="GetBankDetailsByBARRequest"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="GetBankDetailsByBARResponse"/>
+            </wsdl:output>
+            <wsdl:fault name="fault">
+                <soap:fault use="literal" name="fault"/>
+            </wsdl:fault>
+            <wsdl:fault name="fault1">
+                <soap:fault use="literal" name="fault1"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="GetSubscriberLTAInfo">
+            <soap:operation style="document" soapAction="/com_mtel_amdocs_billing_system_services_gq/Processes/Services/GeneralQueriesService/Interface/GeneralQueriesService.serviceagent/PortTypeEndpoint2/GetSubscriberLTAInfo"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="GetSubscriberLTAInfoRequest"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="GetSubscriberLTAInfoResponse"/>
+            </wsdl:output>
+            <wsdl:fault name="fault">
+                <soap:fault use="literal" name="fault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="GetGroupInfo">
+            <soap:operation style="document" soapAction="/com_mtel_amdocs_billing_system_services_gq/Processes/Services/GeneralQueriesService/Interface/GeneralQueriesService.serviceagent//GetGroupInfo"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="GetGroupInfoRequest"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="GetGroupInfoResponse"/>
+            </wsdl:output>
+            <wsdl:fault name="fault1">
+                <soap:fault use="literal" name="fault1"/>
+            </wsdl:fault>
+            <wsdl:fault name="fault2">
+                <soap:fault use="literal" name="fault2"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="ListAllCUGsOfMSISDN">
+            <soap:operation style="document" soapAction="/com_mtel_amdocs_billing_system_services_gq/Processes/Services/GeneralQueriesService/Interface/GeneralQueriesService.serviceagent/PortTypeEndpoint2/ListAllCUGsOfMSISDN"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="ListAllCUGsOfMSISDNRequest"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="ListAllCUGsOfMSISDNResponse"/>
+            </wsdl:output>
+            <wsdl:fault name="fault">
+                <soap:fault use="literal" name="fault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="CreateCustomerDebit">
+            <soap:operation style="document" soapAction="/com_mtel_amdocs_billing_system_services_gq/Processes/Services/GeneralQueriesService/Interface/GeneralQueriesService.serviceagent/PortTypeEndpoint2/CreateCustomerDebit"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="CreateCustomerDebitRequest"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="CreateCustomerDebitResponse"/>
+            </wsdl:output>
+            <wsdl:fault name="fault1">
+                <soap:fault use="literal" name="fault1"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="GetMSISDNByPIDContract">
+            <soap:operation style="document" soapAction="/com_mtel_amdocs_billing_system_services_gq/Processes/Services/GeneralQueriesService/Interface/GeneralQueriesService.serviceagent/PortTypeEndpoint2/GetMSISDNByPIDContract"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="GetMSISDNByPIDContractRequest"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="GetMSISDNByPIDContractResponse"/>
+            </wsdl:output>
+            <wsdl:fault name="fault">
+                <soap:fault use="literal" name="fault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="GetSubscriberInfoByBAN">
+            <soap:operation style="document" soapAction="/com_mtel_amdocs_billing_system_services_gq/Processes/Services/GeneralQueriesService/Interface/GeneralQueriesService.serviceagent/PortTypeEndpoint2/GetSubscriberInfoByBAN"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="GetSubscriberInfoByBANRequest"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="GetSubscriberInfoByBANResponse"/>
+            </wsdl:output>
+            <wsdl:fault name="fault">
+                <soap:fault use="literal" name="fault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="GetCustomerDataBySubscriber">
+            <soap:operation style="document" soapAction="/com_mtel_amdocs_billing_system_services_gq/Processes/Services/GeneralQueriesService/Interface/GeneralQueriesService.serviceagent/PortTypeEndpoint2/GetCustomerDataBySubscriber"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="GetCustomerDataBySubscriberRequest"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="GetCustomerDataBySubscriberResponse"/>
+            </wsdl:output>
+            <wsdl:fault name="fault">
+                <soap:fault use="literal" name="fault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="GetCycleInfo">
+            <soap:operation style="document" soapAction="/com_mtel_amdocs_billing_system_services_gq/Processes/Services/GeneralQueriesService/Interface/GeneralQueriesService.serviceagent/PortTypeEndpoint2/GetCycleInfo"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="GetCycleInfoRequest"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="GetCycleInfoResponse"/>
+            </wsdl:output>
+            <wsdl:fault name="fault">
+                <soap:fault use="literal" name="fault"/>
+            </wsdl:fault>
+            <wsdl:fault name="fault1">
+                <soap:fault use="literal" name="fault1"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="GetCustomerVAT">
+            <soap:operation style="document" soapAction="/com_mtel_amdocs_billing_system_services_gq/Processes/Services/GeneralQueriesService/Interface/GeneralQueriesService.serviceagent/PortTypeEndpoint2/GetCustomerVAT"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="GetCustomerVATRequest"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="GetCustomerVATResponse"/>
+            </wsdl:output>
+            <wsdl:fault name="fault">
+                <soap:fault use="literal" name="fault"/>
+            </wsdl:fault>
+            <wsdl:fault name="fault1">
+                <soap:fault use="literal" name="fault1"/>
+            </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:message name="GetBudgetControlDetailsRequest">
+        <wsdl:part name="GetBudgetControlDetailsRequest" element="ns0:GetBudgetControlDetailsRequest"/>
+    </wsdl:message>
+    <wsdl:message name="GetBudgetControlDetailsResponse">
+        <wsdl:part name="GetBudgetControlDetailsResponse" element="ns0:GetBudgetControlDetailsResponse"/>
+    </wsdl:message>
+    <wsdl:message name="RuntimeFault">
+        <wsdl:part name="RuntimeFault" element="ns1:RuntimeFault"/>
+    </wsdl:message>
+    <wsdl:message name="DataNotFoundFault">
+        <wsdl:part name="DataNotFoundFault" element="ns1:DataNotFoundFault"/>
+    </wsdl:message>
+    <wsdl:message name="GetMSISDNListByBANRequest">
+        <wsdl:part name="GetMSISDNListByBANRequest" element="ns0:GetMSISDNListByBANRequest"/>
+    </wsdl:message>
+    <wsdl:message name="GetMSISDNListByBANResponse">
+        <wsdl:part name="GetMSISDNListByBANResponse" element="ns0:GetMSISDNListByBANResponse"/>
+    </wsdl:message>
+    <wsdl:message name="ChangeSubscriberStatusRequest">
+        <wsdl:part name="ChangeSubscriberStatusRequest" element="ns0:ChangeSubscriberStatusRequest"/>
+    </wsdl:message>
+    <wsdl:message name="ChangeSubscriberStatusResponse">
+        <wsdl:part name="ChangeSubscriberStatusResponse" element="ns0:ChangeSubscriberStatusResponse"/>
+    </wsdl:message>
+    <wsdl:message name="CheckSameGroupMembershipRequest">
+        <wsdl:part name="CheckSameGroupMembershipRequest" element="ns0:CheckSameGroupMembershipRequest"/>
+    </wsdl:message>
+    <wsdl:message name="CheckSameGroupMembershipResponse">
+        <wsdl:part name="CheckSameGroupMembershipResponse" element="ns0:CheckSameGroupMembershipResponse"/>
+    </wsdl:message>
+    <wsdl:message name="GetCustomerOpenInvoiceListRequest">
+        <wsdl:part name="GetCustomerOpenInvoiceListRequest" element="ns0:GetCustomerOpenInvoiceListRequest"/>
+    </wsdl:message>
+    <wsdl:message name="GetCustomerOpenInvoiceListResponse">
+        <wsdl:part name="GetCustomerOpenInvoiceListResponse" element="ns0:GetCustomerOpenInvoiceListResponse"/>
+    </wsdl:message>
+    <wsdl:message name="GetSubscriberOpenInvoiceListRequest">
+        <wsdl:part name="GetSubscriberOpenInvoiceListRequest" element="ns0:GetSubscriberOpenInvoiceListRequest"/>
+    </wsdl:message>
+    <wsdl:message name="GetSubscriberOpenInvoiceListResponse">
+        <wsdl:part name="GetSubscriberOpenInvoiceListResponse" element="ns0:GetSubscriberOpenInvoiceListResponse"/>
+    </wsdl:message>
+    <wsdl:message name="GetSubscriberInfoRequest">
+        <wsdl:part name="GetSubscriberInfoRequest" element="ns0:GetSubscriberInfoRequest"/>
+    </wsdl:message>
+    <wsdl:message name="GetSubscriberInfoResponse">
+        <wsdl:part name="GetSubscriberInfoResponse" element="ns0:GetSubscriberInfoResponse"/>
+    </wsdl:message>
+    <wsdl:message name="GetSubscriberEntityIDsRequest">
+        <wsdl:part name="GetSubscriberEntityIDsRequest" element="ns0:GetSubscriberEntityIDsRequest"/>
+    </wsdl:message>
+    <wsdl:message name="GetSubscriberEntityIDsResponse">
+        <wsdl:part name="GetSubscriberEntityIDsResponse" element="ns0:GetSubscriberEntityIDsResponse"/>
+    </wsdl:message>
+    <wsdl:message name="UpdateBENInfoRequest">
+        <wsdl:part name="UpdateBENInfoRequest" element="ns0:UpdateBENInfoRequest"/>
+    </wsdl:message>
+    <wsdl:message name="UpdateBENInfoResponse">
+        <wsdl:part name="UpdateBENInfoResponse" element="ns0:UpdateBENInfoResponse"/>
+    </wsdl:message>
+    <wsdl:message name="GetPortOutMSISDNCheckRequest">
+        <wsdl:part name="GetPortOutMSISDNCheckRequest" element="ns0:GetPortOutMSISDNCheckRequest"/>
+    </wsdl:message>
+    <wsdl:message name="GetPortOutMSISDNCheckResponse">
+        <wsdl:part name="GetPortOutMSISDNCheckResponse" element="ns0:GetPortOutMSISDNCheckResponse"/>
+    </wsdl:message>
+    <wsdl:message name="GetSubscriberBENInfoRequest">
+        <wsdl:part name="GetSubscriberBENInfoRequest" element="ns0:GetSubscriberBENInfoRequest"/>
+    </wsdl:message>
+    <wsdl:message name="GetSubscriberBENInfoResponse">
+        <wsdl:part name="GetSubscriberBENInfoResponse" element="ns0:GetSubscriberBENInfoResponse"/>
+    </wsdl:message>
+    <wsdl:message name="GetBankDetailsByBARRequest">
+        <wsdl:part name="GetBankDetailsByBARRequest" element="ns0:GetBankDetailsByBARRequest"/>
+    </wsdl:message>
+    <wsdl:message name="GetBankDetailsByBARResponse">
+        <wsdl:part name="GetBankDetailsByBARResponse" element="ns0:GetBankDetailsByBARResponse"/>
+    </wsdl:message>
+    <wsdl:message name="GetSubscriberLTAInfoRequest">
+        <wsdl:part name="GetSubscriberLTAInfoRequest" element="ns0:GetSubscriberLTAInfoRequest"/>
+    </wsdl:message>
+    <wsdl:message name="GetSubscriberLTAInfoResponse">
+        <wsdl:part name="GetSubscriberLTAInfoResponse" element="ns0:GetSubscriberLTAInfoResponse"/>
+    </wsdl:message>
+    <wsdl:message name="GetGroupInfoRequest">
+        <wsdl:part name="GetGroupInfoRequest" element="ns0:GetGroupInfoRequest"/>
+    </wsdl:message>
+    <wsdl:message name="GetGroupInfoResponse">
+        <wsdl:part name="GetGroupInfoResponse" element="ns0:GetGroupInfoResponse"/>
+    </wsdl:message>
+    <wsdl:message name="ListAllCUGsOfMSISDNRequest">
+        <wsdl:part name="ListAllCUGsOfMSISDNRequest" element="ns0:ListAllCUGsOfMSISDNRequest"/>
+    </wsdl:message>
+    <wsdl:message name="ListAllCUGsOfMSISDNResponse">
+        <wsdl:part name="ListAllCUGsOfMSISDNResponse" element="ns0:ListAllCUGsOfMSISDNResponse"/>
+    </wsdl:message>
+    <wsdl:message name="CreateCustomerDebitRequest">
+        <wsdl:part name="CreateCustomerDebitRequest" element="ns0:CreateCustomerDebitRequest"/>
+    </wsdl:message>
+    <wsdl:message name="CreateCustomerDebitResponse">
+        <wsdl:part name="CreateCustomerDebitResponse" element="ns0:CreateCustomerDebitResponse"/>
+    </wsdl:message>
+    <wsdl:message name="GetMSISDNByPIDContractRequest">
+        <wsdl:part name="GetMSISDNByPIDContractRequest" element="ns0:GetMSISDNByPIDContractRequest"/>
+    </wsdl:message>
+    <wsdl:message name="GetMSISDNByPIDContractResponse">
+        <wsdl:part name="GetMSISDNByPIDContractResponse" element="ns0:GetMSISDNByPIDContractResponse"/>
+    </wsdl:message>
+    <wsdl:message name="GetSubscriberInfoByBANRequest">
+        <wsdl:part name="GetSubscriberInfoByBANRequest" element="ns0:GetSubscriberInfoByBANRequest"/>
+    </wsdl:message>
+    <wsdl:message name="GetSubscriberInfoByBANResponse">
+        <wsdl:part name="GetSubscriberInfoByBANResponse" element="ns0:GetSubscriberInfoByBANResponse"/>
+    </wsdl:message>
+    <wsdl:message name="GetCustomerDataBySubscriberRequest">
+        <wsdl:part name="GetCustomerDataBySubscriberRequest" element="ns0:GetCustomerDataBySubscriberRequest"/>
+    </wsdl:message>
+    <wsdl:message name="GetCustomerDataBySubscriberResponse">
+        <wsdl:part name="GetCustomerDataBySubscriberResponse" element="ns0:GetCustomerDataBySubscriberResponse"/>
+    </wsdl:message>
+    <wsdl:message name="GetCycleInfoRequest">
+        <wsdl:part name="GetCycleInfoRequest" element="ns0:GetCycleInfoRequest"/>
+    </wsdl:message>
+    <wsdl:message name="GetCycleInfoResponse">
+        <wsdl:part name="GetCycleInfoResponse" element="ns0:GetCycleInfoResponse"/>
+    </wsdl:message>
+    <wsdl:message name="GetCustomerVATRequest">
+        <wsdl:part name="GetCustomerVATRequest" element="ns0:GetCustomerVATRequest"/>
+    </wsdl:message>
+    <wsdl:message name="GetCustomerVATResponse">
+        <wsdl:part name="GetCustomerVATResponse" element="ns0:GetCustomerVATResponse"/>
+    </wsdl:message>
+</wsdl:definitions>

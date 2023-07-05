@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	 xmlns:m="http://www.mobiltel.bg/chargerequest"
+	 xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	 targetNamespace="http://www.mobiltel.bg/chargerequestforcdrgenerator"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<element name="ChargeRequest">
+		<complexType>
+			<sequence>
+				<element name="SourceID" type="xsd:string"/>
+				<element name="ServiceID" type="xsd:string"/>
+				<element name="MSISDN">
+					<simpleType>
+						<list>
+							<simpleType>
+								<restriction base="xsd:integer">
+									<totalDigits value="12"/>
+								</restriction>
+							</simpleType>
+						</list>
+					</simpleType>
+				</element>
+				<element name="Amount">
+					<simpleType>
+						<restriction base="xsd:decimal">
+							<fractionDigits value="5"/>
+						</restriction>
+					</simpleType>
+				</element>
+				<element name="TransactionID" type="xsd:string" minOccurs="0"/>
+				<element name="BasicService">
+					<simpleType>
+						<restriction base="xsd:integer">
+							<fractionDigits value="2"/>
+						</restriction>
+					</simpleType>
+				</element>
+				<element name="PackageId" type="xsd:string" minOccurs="0"/>
+				<element name="AdditionalProperties" minOccurs="0">
+					<complexType>
+						<sequence>
+							<element name="Property" minOccurs="0" maxOccurs="unbounded">
+								<complexType>
+									<simpleContent>
+										<extension base="xsd:string">
+											<attribute name="name" type="xsd:string"/>
+										</extension>
+									</simpleContent>
+								</complexType>
+							</element>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

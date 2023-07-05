@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- edited with XML Spy v4.3 U (http://www.xmlspy.com) by lpalashevski (tmns) -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	 xmlns:m="http://www.mobiltel.bg/integration"
+	 targetNamespace="http://www.mobiltel.bg/integration"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xsd:element name="ChargeDescription">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="m:SourceID"/>
+				<xsd:element ref="m:ServiceID"/>
+				<xsd:element ref="m:MSISDN"/>
+				<xsd:element ref="m:Amount" minOccurs="0"/>
+				<xsd:element ref="m:TransactionID" minOccurs="0"/>
+				<xsd:element ref="m:Status" minOccurs="0"/>
+				<xsd:element ref="m:CustomInfo" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="SourceID" type="xsd:string"/>
+	<xsd:element name="ServiceID" type="xsd:string"/>
+	<xsd:element name="MSISDN">
+		<xsd:simpleType>
+			<xsd:list itemType="xsd:anySimpleType"/>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="Amount">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:decimal">
+				<xsd:fractionDigits value="5"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="TransactionID" type="xsd:string"/>
+	<xsd:element name="Status" type="xsd:string"/>
+	<xsd:element name="CustomInfo" type="xsd:string"/>
+</xsd:schema>

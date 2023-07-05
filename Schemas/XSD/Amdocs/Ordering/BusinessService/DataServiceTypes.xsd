@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns="http://mtel.bg/Ordering/BusinessServices/DataServiceTypes"
+	 xmlns:OrderingTypes="http://mtel.bg/Ordering/OrderingTypes"
+	 xmlns:LoyaltyPrivateTypes="http://mtel.bg/LoyaltyPrivate/LoyaltyPrivateTypes"
+	 xmlns:CommonTypes="http://mtel.bg/Common/CommonTypes"
+	 targetNamespace="http://mtel.bg/Ordering/BusinessServices/DataServiceTypes"
+	 elementFormDefault="unqualified"
+	 attributeFormDefault="unqualified">
+	<xs:import namespace="http://mtel.bg/Ordering/OrderingTypes" schemaLocation="../OrderingTypes.xsd"/>
+	<xs:import namespace="http://mtel.bg/LoyaltyPrivate/LoyaltyPrivateTypes" schemaLocation="../../LoyaltyPrivate/LoyaltyPrivateTypes.xsd"/>
+	<xs:import namespace="http://mtel.bg/Common/CommonTypes" schemaLocation="../../../../../com_mtel_til_common/Resources/Schemas/XSD/Common/CommonTypes.xsd"/>
+	<xs:complexType name="GetServiceStatusRequestType">
+		<xs:complexContent>
+			<xs:extension base="CommonTypes:BaseInterfaceRequestType">
+				<xs:sequence>
+					<xs:element name="RequestBody">
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:extension base="ServiceComponentRefListRequestBodyType"/>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="GetServiceStatusResponseType">
+		<xs:complexContent>
+			<xs:extension base="CommonTypes:BaseInterfaceResponseType">
+				<xs:sequence>
+					<xs:element name="ResponseBody" minOccurs="0">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="Service" maxOccurs="unbounded">
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="Name" type="OrderingTypes:ServiceName"/>
+											<xs:element name="Status" type="OrderingTypes:ServiceStatus"/>
+										</xs:sequence>
+									</xs:complexType>
+								</xs:element>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="GetFNFServiceRequestType">
+		<xs:complexContent>
+			<xs:extension base="CommonTypes:BaseInterfaceRequestType">
+				<xs:sequence>
+					<xs:element name="RequestBody">
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:extension base="ServiceComponentRefRequestBodyType"/>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="GetFNFServiceResponseType">
+		<xs:complexContent>
+			<xs:extension base="CommonTypes:BaseInterfaceResponseType">
+				<xs:sequence>
+					<xs:element name="ResponseBody" minOccurs="0">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="ProductStatus" type="OrderingTypes:ProductStatus"/>
+								<xs:element name="FNFService" type="OrderingTypes:FNFServiceType" minOccurs="0"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="GetLoyaltyPrivateInfoRequestType">
+		<xs:complexContent>
+			<xs:extension base="CommonTypes:BaseInterfaceRequestType">
+				<xs:sequence>
+					<xs:element name="RequestBody">
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:extension base="BaseDataServiceRequestBodyType"/>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="GetLoyaltyPrivateInfoResponseType">
+		<xs:complexContent>
+			<xs:extension base="CommonTypes:BaseInterfaceResponseType">
+				<xs:sequence>
+					<xs:element name="ResponseBody" minOccurs="0">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="Account" type="LoyaltyPrivateTypes:AccountType"/>
+								<xs:element name="Subscriber" type="LoyaltyPrivateTypes:SubscriberType"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ValidateDiscountRequestType">
+		<xs:complexContent>
+			<xs:extension base="CommonTypes:BaseInterfaceRequestType">
+				<xs:sequence>
+					<xs:element name="RequestBody">
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:extension base="DiscountComponentRefRequestBodyType"/>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ValidateDiscountResponseType">
+		<xs:complexContent>
+			<xs:extension base="CommonTypes:BaseInterfaceResponseType">
+				<xs:sequence>
+					<xs:element name="ResponseBody" minOccurs="0">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="Discount" type="OrderingTypes:DiscountType"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="BaseDataServiceRequestBodyType">
+		<xs:sequence>
+			<xs:element name="ProductRef" type="OrderingTypes:ComponentRefType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ServiceComponentRefRequestBodyType">
+		<xs:complexContent>
+			<xs:extension base="BaseDataServiceRequestBodyType">
+				<xs:sequence>
+					<xs:element name="ServiceComponentRef" type="OrderingTypes:ServiceComponentRefType"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ServiceComponentRefListRequestBodyType">
+		<xs:complexContent>
+			<xs:extension base="BaseDataServiceRequestBodyType">
+				<xs:sequence>
+					<xs:element name="ServiceComponentRef" type="OrderingTypes:ServiceComponentRefType" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="DiscountComponentRefRequestBodyType">
+		<xs:complexContent>
+			<xs:extension base="BaseDataServiceRequestBodyType">
+				<xs:sequence>
+					<xs:element name="DiscountComponentRef" type="OrderingTypes:DiscountComponentRefType"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="DiscountComponentRefListRequestBodyType">
+		<xs:complexContent>
+			<xs:extension base="BaseDataServiceRequestBodyType">
+				<xs:sequence>
+					<xs:element name="DiscountComponentRef" type="OrderingTypes:DiscountComponentRefType" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="DataServiceRequestRoutingInfoType">
+		<xs:sequence>
+			<xs:element name="InterfaceName" type="xs:string"/>
+			<xs:element name="SubscriberType" type="OrderingTypes:SubscriberType"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

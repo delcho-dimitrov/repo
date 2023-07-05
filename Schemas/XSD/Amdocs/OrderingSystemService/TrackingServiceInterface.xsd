@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns="http://mtel.bg/Amdocs/Ordering/SystemServices/TrackingServiceInterface"
+	 xmlns:TrackingServiceTypes="http://mtel.bg/Amdocs/Ordering/SystemServices/TrackingServiceTypes"
+	 targetNamespace="http://mtel.bg/Amdocs/Ordering/SystemServices/TrackingServiceInterface"
+	 elementFormDefault="unqualified"
+	 attributeFormDefault="unqualified">
+	<xs:import namespace="http://mtel.bg/Amdocs/Ordering/SystemServices/TrackingServiceTypes" schemaLocation="TrackingServiceTypes.xsd"/>
+	<xs:element name="GetProductByDateRequest" type="TrackingServiceTypes:GetProductByDateRequestType">
+		<xs:annotation>
+			<xs:documentation/>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="GetProductByDateResponse" type="TrackingServiceTypes:GetProductByDateResponseType">
+		<xs:annotation>
+			<xs:documentation/>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="GetOrderDetailsRequest" type="TrackingServiceTypes:GetOrderDetailsRequestType">
+		<xs:annotation>
+			<xs:documentation/>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="GetOrderDetailsResponse" type="TrackingServiceTypes:GetOrderDetailsResponseType">
+		<xs:annotation>
+			<xs:documentation/>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="GetPrimaryMSISDNBySecondaryResourceRequest" type="TrackingServiceTypes:GetPrimaryMSISDNBySecondaryResourceRequestType">
+		<xs:annotation>
+			<xs:documentation/>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="GetPrimaryMSISDNBySecondaryResourceResponse" type="TrackingServiceTypes:GetPrimaryMSISDNBySecondaryResourceResponseType">
+		<xs:annotation>
+			<xs:documentation/>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="GetOaInfoByOATypeDateAndAPIDRequest" type="TrackingServiceTypes:GetOaInfoByOATypeDateAndAPIDRequestType">
+		<xs:annotation>
+			<xs:documentation/>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="GetOaInfoByOATypeDateAndAPIDResponse" type="TrackingServiceTypes:GetOaInfoByOATypeDateAndAPIDResponseType">
+		<xs:annotation>
+			<xs:documentation/>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="GetProductByResourceRequest" type="TrackingServiceTypes:GetProductByResourceRequestType">
+		<xs:annotation>
+			<xs:documentation/>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="GetProductByResourceResponse" type="TrackingServiceTypes:GetProductByResourceResponseType">
+		<xs:annotation>
+			<xs:documentation/>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="GetComponentByResourceRequest" type="TrackingServiceTypes:GetComponentByResourceRequestType">
+		<xs:annotation>
+			<xs:documentation/>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="GetComponentByResourceResponse" type="TrackingServiceTypes:GetComponentByResourceResponseType">
+		<xs:annotation>
+			<xs:documentation/>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="HasComponentByResourceRequest" type="TrackingServiceTypes:HasComponentByResourceRequestType">
+		<xs:annotation>
+			<xs:documentation/>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="HasComponentByResourceResponse" type="TrackingServiceTypes:HasComponentByResourceResponseType">
+		<xs:annotation>
+			<xs:documentation/>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="GetComponentPropertyValueByResourceRequest" type="TrackingServiceTypes:GetComponentPropertyValueByResourceRequestType">
+		<xs:annotation>
+			<xs:documentation/>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="GetComponentPropertyValueByResourceResponse" type="TrackingServiceTypes:GetComponentPropertyValueByResourceResponseType">
+		<xs:annotation>
+			<xs:documentation/>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="GetAvailableActionsRequest" type="TrackingServiceTypes:GetAvailableActionsRequestType">
+		<xs:annotation>
+			<xs:documentation/>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="GetAvailableActionsResponse" type="TrackingServiceTypes:GetAvailableActionsResponseType">
+		<xs:annotation>
+			<xs:documentation/>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="GetAvailableActionsByResourceRequest" type="TrackingServiceTypes:GetAvailableActionsByResourceRequestType">
+		<xs:annotation>
+			<xs:documentation/>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="GetAvailableActionsByResourceResponse" type="TrackingServiceTypes:GetAvailableActionsByResourceResponseType">
+		<xs:annotation>
+			<xs:documentation/>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

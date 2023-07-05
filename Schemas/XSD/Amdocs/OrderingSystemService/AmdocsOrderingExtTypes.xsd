@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns="http://mtel.bg/Amdocs/Ordering/AmdocsOrderingExtTypes"
+	 xmlns:CommonTypes="http://mtel.bg/Common/CommonTypes"
+	 xmlns:AmdocsOrderingTypes="http://mtel.bg/Amdocs/Ordering/AmdocsOrderingTypes"
+	 targetNamespace="http://mtel.bg/Amdocs/Ordering/AmdocsOrderingExtTypes"
+	 version="1.0"
+	 elementFormDefault="unqualified"
+	 attributeFormDefault="unqualified">
+	<xs:annotation>
+		<xs:documentation>The schema contains additional/extension MTel specific Amdocs Ordering types</xs:documentation>
+	</xs:annotation>
+
+	<!-- J -->
+	<!-- K -->
+	<!-- L -->
+	<!-- M -->
+	<!-- N -->
+	<!-- O -->
+	<!-- P -->
+	<!-- Q -->
+	<!-- R -->
+	<!-- S -->
+	<!-- T -->
+	<!-- U -->
+	<!-- V -->
+	<!-- W -->
+	<!-- X -->
+	<!-- Y -->
+	<!-- Z -->
+	<!-- J -->
+	<xs:import namespace="http://mtel.bg/Common/CommonTypes" schemaLocation="../../../../com_mtel_til_common/Resources/Schemas/XSD/Common/CommonTypes.xsd"/>
+	<xs:import namespace="http://mtel.bg/Amdocs/Ordering/AmdocsOrderingTypes" schemaLocation="AmdocsOrderingTypes.xsd"/>
+	<xs:simpleType name="ClientDataTrimmingMode">
+		<xs:annotation>
+			<xs:documentation>
+				NONE - This filter keeps all elements. It should be used together with a Component Ref Filter.
+				HAS_CO - This filter keeps only dynamic product, component and catalog item elements. The catalog item elements contain only mandatory attributes.
+				GET_CO_PROP_VAL - This filter keeps only dynamic product, component, catalog item and item property elements. The catalog item elements contain only mandatory attributes. The property item element contains name, value and ID attributes.
+				GET_NEG_CO_PROP_VAL - This filter keeps only dynamic product, assigned component, catalog item and item property elements. The catalog item elements contain only mandatory attributes. The property item element contains name, value and ID attributes
+				GET_NEG_ASSIGN_PR - This filter removes repository price plans, relation definition and property definition elements.
+				CHECK_PR_COMP - This filter removes repository components, repository price plans, relation definition and property definition elements.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="NONE"/>
+			<xs:enumeration value="HAS_CO"/>
+			<xs:enumeration value="GET_CO_PROP_VAL"/>
+			<xs:enumeration value="GET_NEG_CO_PROP_VAL"/>
+			<xs:enumeration value="GET_NEG_ASSIGN_PR"/>
+			<xs:enumeration value="CHECK_PR_COMP"/>
+		</xs:restriction>
+		<!-- *************** -->
+		<!-- Simple Types -->
+		<!-- *************** -->
+		<!-- A -->
+		<!-- B -->
+		<!-- C -->
+	</xs:simpleType>
+	<xs:simpleType name="ContextStr">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+
+	<!-- D -->
+	<!-- E -->
+	<!-- F -->
+	<!-- G -->
+	<!-- H -->
+	<!-- I -->
+	<xs:simpleType name="InterfaceBodyStr">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="InterfaceName">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="InterfaceRequestStr">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="InterfaceResponseStr">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+
+	<!-- J -->
+	<!-- K -->
+	<!-- L -->
+	<!-- M -->
+	<!-- N -->
+	<!-- O -->
+	<!-- P -->
+	<!-- Q -->
+	<!-- R -->
+	<!-- S -->
+	<!-- ***************** -->
+	<!-- Complex Types -->
+	<!-- ***************** -->
+	<!-- A -->
+	<!-- B -->
+	<!-- C -->
+	<xs:complexType name="ClientDataTrimmingFilterType">
+		<xs:sequence>
+			<xs:element name="Mode" type="ClientDataTrimmingMode"/>
+			<xs:element name="ComponentRef" type="ComponentRefType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- D -->
+	<xs:complexType name="BaseBackEndRequestType">
+		<xs:complexContent>
+			<xs:extension base="CommonTypes:BaseBackEndRequestType">
+				<xs:sequence>
+					<xs:element name="Context" type="AmdocsOrderingTypes:ContextType" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="BaseBackEndResponseType">
+		<xs:complexContent>
+			<xs:extension base="CommonTypes:BaseBackEndResponseType">
+				<xs:sequence>
+					<xs:element name="Context" type="AmdocsOrderingTypes:ContextType" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="BaseImplementationRequestType">
+		<xs:complexContent>
+			<xs:extension base="CommonTypes:BaseImplementationRequestType">
+				<xs:sequence>
+					<xs:element name="Context" type="AmdocsOrderingTypes:ContextType" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="BaseImplementationResponseType">
+		<xs:complexContent>
+			<xs:extension base="CommonTypes:BaseImplementationResponseType">
+				<xs:sequence>
+					<xs:element name="Context" type="AmdocsOrderingTypes:ContextType" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="BaseInterfaceRequestType">
+		<xs:complexContent>
+			<xs:extension base="CommonTypes:BaseInterfaceRequestType">
+				<xs:sequence>
+					<xs:element name="Context" type="AmdocsOrderingTypes:ContextType" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="BaseInterfaceResponseType">
+		<xs:complexContent>
+			<xs:extension base="CommonTypes:BaseInterfaceResponseType">
+				<xs:sequence>
+					<xs:element name="Context" type="AmdocsOrderingTypes:ContextType" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<!-- C -->
+	<xs:complexType name="ComponentAPIDRefType">
+		<xs:sequence>
+			<xs:element name="APID" type="AmdocsOrderingTypes:IDType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ComponentCodePathType">
+		<xs:sequence>
+			<xs:element name="Token" type="ComponentCodePathTokenType" minOccurs="2" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ComponentCodePathTokenType">
+		<xs:sequence>
+			<xs:element name="Code" type="AmdocsOrderingTypes:NameType"/>
+			<xs:element name="Index" type="xs:integer" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ComponentCodeRefType">
+		<xs:sequence>
+			<xs:element name="Code" type="AmdocsOrderingTypes:NameType"/>
+			<xs:element name="Path" type="ComponentCodePathType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ComponentRefComponentType">
+		<xs:sequence>
+			<xs:element name="ComponentRef" type="ComponentRefType"/>
+			<xs:element ref="AmdocsOrderingTypes:Component" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ComponentRefHasComponentType">
+		<xs:sequence>
+			<xs:element name="ComponentRef" type="ComponentRefType"/>
+			<xs:element name="HasComponent" type="xs:boolean"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ComponentRefProductType">
+		<xs:sequence>
+			<xs:element ref="AmdocsOrderingTypes:DynamicProduct"/>
+			<xs:element name="ComponentRefComponent" type="ComponentRefComponentType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ComponentRefHasComponentProductType">
+		<xs:sequence>
+			<xs:element ref="AmdocsOrderingTypes:DynamicProduct"/>
+			<xs:element name="ComponentRefHasComponent" type="ComponentRefHasComponentType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ComponentPropertyRefType">
+		<xs:sequence>
+			<xs:element name="ComponentRef" type="ComponentRefType"/>
+			<xs:element name="PropertyName" type="AmdocsOrderingTypes:NameType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ComponentRefType">
+		<xs:choice>
+			<xs:element name="ComponentAPIDRef" type="ComponentAPIDRefType"/>
+			<xs:element name="ComponentCodeRef" type="ComponentCodeRefType"/>
+		</xs:choice>
+	</xs:complexType>
+
+	<!-- D -->
+	<!-- E -->
+	<!-- F -->
+	<!-- G -->
+	<!-- H -->
+	<!-- I -->
+	<xs:complexType name="InterfaceRequestStrType">
+		<xs:sequence>
+			<xs:element name="InterfaceName" type="InterfaceName"/>
+			<xs:element name="InterfaceBody" type="InterfaceBodyStr"/>
+			<xs:element name="Context" type="ContextStr"/>
+			<xs:element name="ClientDataTrimmingFilter" type="ClientDataTrimmingFilterType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="InterfaceResponseStrType">
+		<xs:sequence>
+			<xs:element name="InterfaceName" type="InterfaceName"/>
+			<xs:element name="InterfaceBody" type="InterfaceBodyStr"/>
+			<xs:element name="Context" type="ContextStr"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

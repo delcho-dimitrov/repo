@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns:r="http://www.mobiltel.bg/integration"
+	 targetNamespace="http://www.mobiltel.bg/integration"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xs:simpleType name="Amount">
+		<xs:restriction base="xs:decimal">
+			<xs:fractionDigits value="5"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="MSISDN">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="6"/>
+			<xs:maxLength value="20"/>
+			<xs:pattern value="\d*"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="RefundDescription">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="SourceID" type="xs:string"/>
+				<xs:element name="ServiceID" type="xs:string" minOccurs="0"/>
+				<xs:element name="ProductID" type="xs:string" minOccurs="0"/>
+				<xs:element name="MSISDN" type="r:MSISDN"/>
+				<xs:element name="Amount" type="r:Amount"/>
+				<xs:element name="ChargeTransactionDate" type="xs:string" minOccurs="0"/>
+				<xs:element name="ChargeTransactionID" type="xs:string" minOccurs="0"/>
+				<xs:element name="TransactionID" type="xs:string" minOccurs="0"/>
+				<xs:element name="ProcessID" type="xs:string" minOccurs="0"/>
+				<xs:element name="Status" type="xs:string" minOccurs="0"/>
+				<xs:element name="StatusCode" type="xs:string" minOccurs="0"/>
+				<xs:element name="StatusMessage" type="xs:string" minOccurs="0"/>
+				<xs:element name="Channel" type="xs:string" minOccurs="0"/>
+				<xs:element name="CustomInfo" type="xs:string" minOccurs="0"/>
+				<xs:element name="Timestamp" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GetRefundTIDRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="SourceID" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GetRefundTIDResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="TransactionID" type="xs:string" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

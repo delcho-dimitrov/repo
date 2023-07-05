@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns="http://mtel.bg/Ordering/OrderingTypes"
+	 targetNamespace="http://mtel.bg/Ordering/OrderingTypes"
+	 elementFormDefault="unqualified"
+	 attributeFormDefault="unqualified">
+
+	<!-- *************** -->
+	<!-- Simple Types -->
+	<!-- *************** -->
+	<!-- A -->
+	<!-- B -->
+	<!-- C -->
+	<xs:simpleType name="CampaignID">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="ComponentCode">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="ComponentID">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="ComponentName">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="ComponentPath">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+
+	<!-- D -->
+	<xs:simpleType name="DiscountID">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="DiscountName">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="DiscountOperation">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Activate"/>
+			<xs:enumeration value="Modify"/>
+			<xs:enumeration value="Deactivate"/>
+			<xs:enumeration value="Information"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="DiscountServiceType">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+
+	<!-- E -->
+	<!-- F -->
+	<!-- G -->
+	<!-- H -->
+	<!-- I -->
+	<xs:simpleType name="IMSI">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+
+	<!-- J -->
+	<!-- K -->
+	<!-- L -->
+	<xs:simpleType name="LoyaltyPointsAmount">
+		<xs:restriction base="xs:integer"/>
+	</xs:simpleType>
+
+	<!-- M -->
+	<xs:simpleType name="MTelSpotPassword">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="MTelSpotSubscriberID">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="MTelSpotUsername">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="MSISDN">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[0][0-9]+"/>
+			<xs:maxLength value="12"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="MultiRing">
+		<xs:restriction base="xs:boolean"/>
+	</xs:simpleType>
+
+	<!-- N -->
+	<!-- O -->
+	<!-- P -->
+	<xs:simpleType name="PositionsCount">
+		<xs:restriction base="xs:int"/>
+	</xs:simpleType>
+	<xs:simpleType name="ProductStatus">
+		<xs:annotation>
+			<xs:documentation>
+				AC - Active
+				CE - Ceased
+				NA - Not Active
+				SU - Suspended
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="AC"/>
+			<xs:enumeration value="CE"/>
+			<xs:enumeration value="IN"/>
+			<xs:enumeration value="NA"/>
+			<xs:enumeration value="PA"/>
+			<xs:enumeration value="PC"/>
+			<xs:enumeration value="PS"/>
+			<xs:enumeration value="SU"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PropertyName">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+
+	<!-- Q -->
+	<xs:simpleType name="Quota">
+		<xs:restriction base="xs:integer"/>
+	</xs:simpleType>
+
+	<!-- R -->
+	<xs:simpleType name="ResourceType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="SIM"/>
+			<xs:enumeration value="EQUIP"/>
+			<xs:enumeration value="MSISDN"/>
+			<xs:enumeration value="IMSI"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ResourceValue">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+
+	<!-- S -->
+	<xs:simpleType name="ServiceName">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="ServiceOperation">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Activate"/>
+			<xs:enumeration value="Modify"/>
+			<xs:enumeration value="Deactivate"/>
+			<xs:enumeration value="Information"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ServiceStatus">
+		<xs:annotation>
+			<xs:documentation>
+				AC - Active
+				NA - Not Available
+				</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="AC"/>
+			<xs:enumeration value="NA"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SIPAddress">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="SubscriberType">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+
+	<!-- T -->
+	<!-- U -->
+	<!-- V -->
+	<!-- W -->
+	<!-- X -->
+	<!-- Y -->
+	<!-- Z -->
+	<!-- ***************** -->
+	<!-- Complex Types -->
+	<!-- ***************** -->
+	<!-- A -->
+	<!-- B -->
+	<!-- C -->
+	<xs:complexType name="CampaignType">
+		<xs:sequence>
+			<xs:element name="ID" type="CampaignID"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ComponentIDRefType">
+		<xs:sequence>
+			<xs:element name="ID" type="ComponentID"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ComponentCodePathType">
+		<xs:sequence>
+			<xs:element name="Token" type="ComponentCodePathTokenType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ComponentCodePathTokenType">
+		<xs:sequence>
+			<xs:element name="Code" type="ComponentCode"/>
+			<xs:element name="Index" type="xs:integer" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ComponentCodeRefType">
+		<xs:sequence>
+			<xs:element name="Code" type="ComponentCode"/>
+			<xs:element name="Path" type="ComponentCodePathType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ComponentRefType">
+		<xs:choice>
+			<xs:element name="IDRef" type="ComponentIDRefType"/>
+			<xs:element name="CodeRef" type="ComponentCodeRefType"/>
+			<xs:element name="ResourceRef" type="ResourceRefType"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="ComponentType">
+		<xs:sequence>
+			<xs:element name="ID" type="ComponentID"/>
+			<xs:element name="Code" type="ComponentCode"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- D -->
+	<xs:complexType name="DiscountAdditionalInfoType">
+		<xs:choice>
+			<xs:element name="LoyaltyDiscountAdditionalInfo" type="LoyaltyDiscountAdditionalInfoType"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="DiscountComponentRefType">
+		<xs:sequence>
+			<xs:element name="DiscountName" type="DiscountName"/>
+			<xs:element name="DiscountID" type="DiscountID"/>
+			<xs:element name="ComponentRef" type="ComponentRefType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DiscountType">
+		<xs:choice>
+			<xs:element name="GenericDiscount" type="GenericDiscountType"/>
+			<xs:element name="LoyaltyDiscount" type="LoyaltyDiscountType"/>
+		</xs:choice>
+	</xs:complexType>
+
+	<!-- E -->
+	<!-- F -->
+	<xs:complexType name="FNFServiceType">
+		<xs:sequence>
+			<xs:element name="DestinationMSISDN" type="MSISDN" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="PositionsCount" type="PositionsCount"/>
+			<xs:element name="FreeChangesQuota" type="Quota" minOccurs="0"/>
+			<xs:element name="MaxChangesQuota" type="Quota" minOccurs="0"/>
+			<xs:element name="ChangesCount" type="Quota" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- G -->
+	<xs:complexType name="GenericDiscountType">
+		<xs:complexContent>
+			<xs:extension base="ComponentType">
+				<xs:sequence>
+					<xs:element name="DiscountID" type="DiscountID"/>
+					<xs:element name="DiscountName" type="DiscountName"/>
+					<xs:element name="DiscountServiceType" type="DiscountServiceType"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<!-- H -->
+	<xs:complexType name="LoyaltyDiscountType">
+		<xs:complexContent>
+			<xs:extension base="GenericDiscountType">
+				<xs:sequence>
+					<xs:element name="LoyaltyPointsAmount" type="LoyaltyPointsAmount"/>
+					<xs:element name="LoyaltyPointsCreditAmount" type="LoyaltyPointsAmount"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<!-- I -->
+	<!-- J -->
+	<!-- K -->
+	<!-- L -->
+	<xs:complexType name="LoyaltyDiscountAdditionalInfoType">
+		<xs:sequence>
+			<xs:element name="RemainingBalance" type="LoyaltyPointsAmount"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- M -->
+	<xs:complexType name="MSISDNTransformationType">
+		<xs:sequence>
+			<xs:element name="OldMSISDN" type="MSISDN" minOccurs="0"/>
+			<xs:element name="NewMSISDN" type="MSISDN" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- N -->
+	<xs:complexType name="ProductType">
+		<xs:complexContent>
+			<xs:extension base="ComponentType">
+				<xs:sequence>
+					<xs:element name="Dummy" type="xs:string"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<!-- Q -->
+	<!-- R -->
+	<xs:complexType name="ResourceRefType">
+		<xs:sequence>
+			<xs:element name="Value" type="ResourceValue"/>
+			<xs:element name="Type" type="ResourceType"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- S -->
+	<xs:complexType name="ServiceComponentRefType">
+		<xs:sequence>
+			<xs:element name="ServiceName" type="ServiceName"/>
+			<xs:element name="ComponentRef" type="ComponentRefType"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

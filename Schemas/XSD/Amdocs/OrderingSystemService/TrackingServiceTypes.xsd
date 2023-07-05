@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns="http://mtel.bg/Amdocs/Ordering/SystemServices/TrackingServiceTypes"
+	 xmlns:AmdocsOrderingTypes="http://mtel.bg/Amdocs/Ordering/AmdocsOrderingTypes"
+	 xmlns:AmdocsOrderingExtTypes="http://mtel.bg/Amdocs/Ordering/AmdocsOrderingExtTypes"
+	 xmlns:CommonTypes="http://mtel.bg/Common/CommonTypes"
+	 targetNamespace="http://mtel.bg/Amdocs/Ordering/SystemServices/TrackingServiceTypes"
+	 elementFormDefault="unqualified"
+	 attributeFormDefault="unqualified">
+	<xs:annotation>
+		<xs:documentation>
+			APIConnectorTypes.xsd 20090708 v1.0
+			APIConnectorElements.xsd 20090708 v1.0
+		</xs:documentation>
+	</xs:annotation>
+	<xs:import namespace="http://mtel.bg/Amdocs/Ordering/AmdocsOrderingTypes" schemaLocation="AmdocsOrderingTypes.xsd"/>
+	<xs:import namespace="http://mtel.bg/Amdocs/Ordering/AmdocsOrderingExtTypes" schemaLocation="AmdocsOrderingExtTypes.xsd"/>
+	<xs:import namespace="http://mtel.bg/Common/CommonTypes" schemaLocation="../../../../com_mtel_til_common/Resources/Schemas/XSD/Common/CommonTypes.xsd"/>
+	<xs:complexType name="GetProductByDateRequestType">
+		<xs:complexContent>
+			<xs:extension base="AmdocsOrderingExtTypes:BaseInterfaceRequestType">
+				<xs:sequence>
+					<xs:element name="RequestBody">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="GetProductByDateRequestBody" type="GetProductByDateRequestBodyType"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="GetProductByDateResponseType">
+		<xs:complexContent>
+			<xs:extension base="AmdocsOrderingExtTypes:BaseInterfaceResponseType">
+				<xs:sequence>
+					<xs:element name="ResponseBody" minOccurs="0">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="GetProductByDateResponseBody" type="GetProductByDateResponseBodyType"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="GetPrimaryMSISDNBySecondaryResourceRequestType">
+		<xs:complexContent>
+			<xs:extension base="AmdocsOrderingExtTypes:BaseInterfaceRequestType">
+				<xs:sequence>
+					<xs:element name="RequestBody">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="GetPrimaryMSISDNBySecondaryResourceRequestBody" type="GetPrimaryMSISDNBySecondaryResourceRequestBodyType"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="GetPrimaryMSISDNBySecondaryResourceResponseType">
+		<xs:complexContent>
+			<xs:extension base="AmdocsOrderingExtTypes:BaseInterfaceResponseType">
+				<xs:sequence>
+					<xs:element name="ResponseBody" minOccurs="0">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="GetPrimaryMSISDNBySecondaryResourceResponseBody" type="GetPrimaryMSISDNBySecondaryResourceResponseBodyType"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="GetOaInfoByOATypeDateAndAPIDRequestType">
+		<xs:complexContent>
+			<xs:extension base="AmdocsOrderingExtTypes:BaseInterfaceRequestType">
+				<xs:sequence>
+					<xs:element name="RequestBody">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="GetOaInfoByOATypeDateAndAPIDRequestBody" type="GetOaInfoByOATypeDateAndAPIDRequestBodyType"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="GetOaInfoByOATypeDateAndAPIDResponseType">
+		<xs:complexContent>
+			<xs:extension base="AmdocsOrderingExtTypes:BaseInterfaceResponseType">
+				<xs:sequence>
+					<xs:element name="ResponseBody" minOccurs="0">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="GetOaInfoByOATypeDateAndAPIDResponseBody" type="GetOaInfoByOATypeDateAndAPIDResponseBodyType"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="GetOrderDetailsRequestType">
+		<xs:complexContent>
+			<xs:extension base="AmdocsOrderingExtTypes:BaseInterfaceRequestType">
+				<xs:sequence>
+					<xs:element name="RequestBody">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="GetOrderDetailsRequestBody" type="GetOrderDetailsRequestBodyType"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="GetOrderDetailsResponseType">
+		<xs:complexContent>
+			<xs:extension base="AmdocsOrderingExtTypes:BaseInterfaceResponseType">
+				<xs:sequence>
+					<xs:element name="ResponseBody" minOccurs="0">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="GetOrderDetailsResponseBody" type="GetOrderDetailsResponseBodyType"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="GetProductByResourceRequestType">
+		<xs:complexContent>
+			<xs:extension base="AmdocsOrderingExtTypes:BaseInterfaceRequestType">
+				<xs:sequence>
+					<xs:element name="RequestBody" type="GetProductByResourceRequestBodyType"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="GetProductByResourceResponseType">
+		<xs:complexContent>
+			<xs:extension base="AmdocsOrderingExtTypes:BaseInterfaceResponseType">
+				<xs:sequence>
+					<xs:element name="ResponseBody" type="GetProductByResourceResponseBodyType" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="GetComponentByResourceRequestType">
+		<xs:complexContent>
+			<xs:extension base="AmdocsOrderingExtTypes:BaseInterfaceRequestType">
+				<xs:sequence>
+					<xs:element name="RequestBody" type="GetComponentByResourceRequestBodyType"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="GetComponentByResourceResponseType">
+		<xs:complexContent>
+			<xs:extension base="AmdocsOrderingExtTypes:BaseInterfaceResponseType">
+				<xs:sequence>
+					<xs:element name="ResponseBody" type="GetComponentByResourceResponseBodyType" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="HasComponentByResourceRequestType">
+		<xs:complexContent>
+			<xs:extension base="AmdocsOrderingExtTypes:BaseInterfaceRequestType">
+				<xs:sequence>
+					<xs:element name="RequestBody" type="HasComponentByResourceRequestBodyType"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="HasComponentByResourceResponseType">
+		<xs:complexContent>
+			<xs:extension base="AmdocsOrderingExtTypes:BaseInterfaceResponseType">
+				<xs:sequence>
+					<xs:element name="ResponseBody" type="HasComponentByResourceResponseBodyType" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="GetComponentPropertyValueByResourceRequestType">
+		<xs:complexContent>
+			<xs:extension base="AmdocsOrderingExtTypes:BaseInterfaceRequestType">
+				<xs:sequence>
+					<xs:element name="RequestBody" type="GetComponentPropertyValueByResourceRequestBodyType"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="GetComponentPropertyValueByResourceResponseType">
+		<xs:complexContent>
+			<xs:extension base="AmdocsOrderingExtTypes:BaseInterfaceResponseType">
+				<xs:sequence>
+					<xs:element name="ResponseBody" type="GetComponentPropertyValueByResourceResponseBodyType" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="GetAvailableActionsRequestType">
+		<xs:complexContent>
+			<xs:extension base="AmdocsOrderingExtTypes:BaseInterfaceRequestType">
+				<xs:sequence>
+					<xs:element name="RequestBody" type="GetAvailableActionsRequestBodyType"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="GetAvailableActionsResponseType">
+		<xs:complexContent>
+			<xs:extension base="AmdocsOrderingExtTypes:BaseInterfaceResponseType">
+				<xs:sequence>
+					<xs:element name="ResponseBody" type="GetAvailableActionsResponseBodyType" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="GetAvailableActionsByResourceRequestType">
+		<xs:complexContent>
+			<xs:extension base="AmdocsOrderingExtTypes:BaseInterfaceRequestType">
+				<xs:sequence>
+					<xs:element name="RequestBody" type="GetAvailableActionsByResourceRequestBodyType"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="GetAvailableActionsByResourceResponseType">
+		<xs:complexContent>
+			<xs:extension base="AmdocsOrderingExtTypes:BaseInterfaceResponseType">
+				<xs:sequence>
+					<xs:element name="ResponseBody" type="GetAvailableActionsByResourceResponseBodyType" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="GetAvailableActionsRequestBodyType">
+		<xs:attribute name="apId" type="AmdocsOrderingTypes:IDType" use="required"/>
+		<xs:attribute name="salesChannel" type="AmdocsOrderingTypes:SalesChannelType"/>
+	</xs:complexType>
+	<xs:complexType name="GetAvailableActionsResponseBodyType">
+		<xs:sequence>
+			<xs:element ref="AmdocsOrderingTypes:DynamicProduct" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="GetAvailableActionsByResourceRequestBodyType">
+		<xs:sequence>
+			<xs:element name="ResourceValue" type="xs:string"/>
+			<xs:element name="ResourceType" type="ResourceType"/>
+			<xs:element name="APID" type="AmdocsOrderingTypes:IDType"/>
+			<xs:element name="SalesChannel" type="AmdocsOrderingTypes:SalesChannelType" minOccurs="0"/>
+			<xs:element name="MaxResultCount" type="xs:int" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="GetAvailableActionsByResourceResponseBodyType">
+		<xs:sequence>
+			<xs:element ref="AmdocsOrderingTypes:DynamicProduct" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="GetProductByDateRequestBodyType">
+		<xs:sequence>
+			<xs:element name="ClientDataTrimmingFilter" type="AmdocsOrderingExtTypes:ClientDataTrimmingFilterType" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="retrieveAll" type="AmdocsOrderingTypes:BooleanType"/>
+		<xs:attribute name="apId" type="AmdocsOrderingTypes:IDType"/>
+		<xs:attribute name="serviceId" type="AmdocsOrderingTypes:IDType"/>
+		<xs:attribute name="retrieveActions" type="AmdocsOrderingTypes:BooleanType"/>
+		<xs:attribute name="date" type="xs:date"/>
+		<xs:attribute name="dataTrimmingMode" type="AmdocsOrderingTypes:DataTrimmingModeType"/>
+	</xs:complexType>
+	<xs:complexType name="GetProductByDateResponseBodyType">
+		<xs:sequence>
+			<xs:element ref="AmdocsOrderingTypes:DynamicProduct" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="GetPrimaryMSISDNBySecondaryResourceRequestBodyType">
+		<xs:attribute name="criteria" type="xs:string" use="required"/>
+		<xs:attribute name="criteriaType" type="AmdocsOrderingTypes:ResourceCriteriaTypeType" use="required"/>
+		<xs:attribute name="operator" type="AmdocsOrderingTypes:QueryOperatorTypeType"/>
+		<xs:attribute name="maxCount" type="xs:int"/>
+	</xs:complexType>
+	<xs:complexType name="GetPrimaryMSISDNBySecondaryResourceResponseBodyType">
+		<xs:sequence>
+			<xs:element ref="SubscriberInfo" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="totalCount" type="xs:int" use="required"/>
+		<xs:attribute name="errorMsg" type="xs:string"/>
+	</xs:complexType>
+	<xs:complexType name="GetOaInfoByOATypeDateAndAPIDRequestBodyType">
+		<xs:attribute name="apID" type="AmdocsOrderingTypes:IDType" use="required"/>
+		<xs:attribute name="oaType" type="AmdocsOrderingTypes:OrderActionNameType" use="required"/>
+		<xs:attribute name="fromDate" type="xs:dateTime" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="GetOaInfoByOATypeDateAndAPIDResponseBodyType">
+		<xs:sequence>
+			<xs:element ref="OrderActionInfo" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="totalCount" type="xs:int" use="required"/>
+		<xs:attribute name="errorMsg" type="xs:string"/>
+	</xs:complexType>
+	<xs:complexType name="GetOrderDetailsRequestBodyType">
+		<xs:attribute name="orderID" type="AmdocsOrderingTypes:IDType"/>
+		<xs:attribute name="orderRefNum" type="AmdocsOrderingTypes:IDType"/>
+		<xs:attribute name="externalRefNumber" type="AmdocsOrderingTypes:IDType"/>
+	</xs:complexType>
+	<xs:complexType name="GetOrderDetailsResponseBodyType">
+		<xs:sequence>
+			<xs:element ref="AmdocsOrderingTypes:Order" minOccurs="0"/>
+			<xs:element ref="AmdocsOrderingTypes:OrderAction" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="AmdocsOrderingTypes:DynamicProduct" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="AmdocsOrderingTypes:TotalCharges" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SubscriberInfoType">
+		<xs:attribute name="apID" type="AmdocsOrderingTypes:IDType" use="required"/>
+		<xs:attribute name="serviceID" type="AmdocsOrderingTypes:MSISDNType" use="required"/>
+		<xs:attribute name="billingCustomerID" type="AmdocsOrderingTypes:IDType" use="required"/>
+		<xs:attribute name="apStatus" type="AmdocsOrderingTypes:APStatusType" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="OrderActionInfoType">
+		<xs:attribute name="apID" type="AmdocsOrderingTypes:IDType" use="required"/>
+		<xs:attribute name="oaType" type="AmdocsOrderingTypes:OrderActionNameType" use="required"/>
+		<xs:attribute name="oaID" type="AmdocsOrderingTypes:IDType" use="required"/>
+		<xs:attribute name="orderID" type="AmdocsOrderingTypes:IDType" use="required"/>
+		<xs:attribute name="startDate" type="xs:dateTime" use="required"/>
+		<xs:attribute name="isActive" type="xs:boolean" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="GetProductByResourceRequestBodyType">
+		<xs:sequence>
+			<xs:element name="ResourceValue" type="xs:string"/>
+			<xs:element name="ResourceType" type="ResourceType"/>
+			<xs:element name="APFilter" type="APFilterType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="MaxResultCount" type="xs:int" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="APFilterType">
+		<xs:sequence>
+			<xs:element name="APStatus" type="AmdocsOrderingTypes:APStatusType" minOccurs="0"/>
+			<xs:element name="RetrieveAll" type="AmdocsOrderingTypes:BooleanType" minOccurs="0"/>
+			<xs:element name="RetrieveActions" type="AmdocsOrderingTypes:BooleanType" minOccurs="0"/>
+			<xs:element name="Date" type="xs:date" minOccurs="0"/>
+			<xs:element name="DataTrimmingMode" type="AmdocsOrderingTypes:DataTrimmingModeType" minOccurs="0"/>
+			<xs:element name="ClientDataTrimmingFilter" type="AmdocsOrderingExtTypes:ClientDataTrimmingFilterType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="GetComponentByResourceRequestBodyType">
+		<xs:sequence>
+			<xs:element name="ProductByResource" type="GetProductByResourceRequestBodyType"/>
+			<xs:element name="ComponentRef" type="AmdocsOrderingExtTypes:ComponentRefType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="GetProductByResourceResponseBodyType">
+		<xs:sequence>
+			<xs:element ref="AmdocsOrderingTypes:DynamicProduct" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="GetComponentByResourceResponseBodyType">
+		<xs:sequence>
+			<xs:element name="ComponentRefProduct" type="AmdocsOrderingExtTypes:ComponentRefProductType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="ResourceType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="SIM"/>
+			<xs:enumeration value="EQUIP"/>
+			<xs:enumeration value="MSISDN"/>
+			<xs:enumeration value="IMSI"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="OrderActionInfo" type="OrderActionInfoType"/>
+	<xs:element name="SubscriberInfo" type="SubscriberInfoType"/>
+	<xs:complexType name="HasComponentByResourceRequestBodyType">
+		<xs:sequence>
+			<xs:element name="ProductByResource" type="GetProductByResourceRequestBodyType"/>
+			<xs:element name="ComponentRef" type="AmdocsOrderingExtTypes:ComponentRefType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="HasComponentByResourceResponseBodyType">
+		<xs:sequence>
+			<xs:element name="ComponentRefHasComponentProduct" type="AmdocsOrderingExtTypes:ComponentRefHasComponentProductType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="GetComponentPropertyValueByResourceRequestBodyType">
+		<xs:sequence>
+			<xs:element name="ProductByResource" type="GetProductByResourceRequestBodyType"/>
+			<xs:element name="ComponentPropertyRef" type="AmdocsOrderingExtTypes:ComponentPropertyRefType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="GetComponentPropertyValueByResourceResponseBodyType">
+		<xs:sequence>
+			<xs:element name="ComponentRefProduct" type="AmdocsOrderingExtTypes:ComponentRefProductType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>
